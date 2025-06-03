@@ -1,3 +1,8 @@
+---
+layout: default
+title: Home
+---
+
 ## alias TODO
 Set aliases for commands <ins>temporarily</ins>.
 
