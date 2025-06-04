@@ -3,12 +3,14 @@ layout: default
 title: Tool Journal
 nav_exclude: true
 ---
-## alias TODO
+## alias
+TODO
 Set aliases for commands <ins>temporarily</ins>.
 
 [How to set an alias permanently in bash or zsh](https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/addendums.md#how-to-make-aliases-permanent-in-bash-or-zsh)
 
-## awk TODO
+## awk
+TODO
 **Fields are represented as $N where N is position**  
 1st field `$1`  
 3rd field `$3`  
@@ -25,15 +27,18 @@ This adds a period at the end of every line `awk {print $0 "."}`
 Good tutorial on awk [here](https://learnbyexample.github.io/learn_gnuawk/awk-introduction.html).
 For interactive exercises see [addendum](https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/addendums.md#interactive-awk-exercises)
 
-## apt TODO
+## apt
+TODO
 Package manager for Debian, Ubuntu, Linux Mint, and Kali Linux. 
 
-## cat TODO
+## cat
+TODO
 Con<ins><b>cat</b></ins>anate files, but mainly used to display text.
 
 `--show-tabs` Show literal characters (for ex. whitespace is replaced with ^I)
 
-## capinfos TODO
+## capinfos
+TODO
 Print information and properties of pcaps. Detects out of order packets.  
 
 `-c` Display packet count.  
@@ -45,7 +50,8 @@ Get checksums of file. You can choose a hashing algorithm to apply. For MD5 chec
 With no options, it does 32 bit CRC by default `cksum foo.exe`  
 Do SHA256 hash (you can also do this with <a href=https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/wthat_tools.md#sha256sum>sha256sum</a>)`cksum -a sha256 foo.exe`  
 
-## curl TODO
+## curl
+TODO
 Get file from url. Similar to wget
 
 ## date
@@ -57,11 +63,13 @@ Print file system usage.
 `-a` Include hidden and duplicate file systems.
 `-h` Human readable data sizes
 
-## diff TODO
+## diff
+TODO
 Compare the files line by line.  
 `diff file1 file2`  
 
-## dig TODO  
+## dig
+TODO  
 DNS lookup utility.  
 
 
@@ -86,7 +94,8 @@ Intialise it with gpg
 
 Stackoverflow help: [What commands exactly should replace the deprecated apt-key?](https://askubuntu.com/questions/1286545/what-commands-exactly-should-replace-the-deprecated-apt-key/1307181#1307181)  
 
-## grep TODO
+## grep
+TODO
 
 [1]: [Where GREP came from](https://www.youtube.com/watch?v=NTfOnGZUZDk)  
 
@@ -95,10 +104,12 @@ Unzip `.gz` files, but if you want to unzip `.tar.gz`, use `tar`.
 
 `gunzip foo.gz`
 
-## ifconfig TODO 
+## ifconfig
+TODO 
 
 
-## ip TODO
+## ip
+TODO
 Show and change ip configuration.  
 
 `-a` Display all ip configuration  
@@ -112,7 +123,8 @@ You can "pause" shell commands with `Ctrl + Z` which is then placed on a backlog
 
 See also: [Red Hat blog](https://www.redhat.com/en/blog/jobs-bg-fg)  
 
-## jq TODO
+## jq
+TODO
 Used for parsing json files. Good synergy with zeek json logs.
 
 ## less
@@ -158,7 +170,8 @@ Size
 `-s` Include size of each file but not human readable.  
 `-h` with `-s`, make it human readable sizes.  
 
-## man TODO
+## man
+TODO
 Used for getting help manuals of a command. Opens a `less` of the manual's txt file.
 
 ## md5sum 
@@ -174,18 +187,22 @@ Make a drive into a swap partition. Used in addition to [swapon](https://github.
 Mount partitioned disks  
 `--mkdir` Generate a named directory for the drive  
 
-## nano TODO
+## nano
+TODO
 Text editor (not installed by default on bash, however [vi](https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/wthat_tools.md#vi) is!)
 
-## nc TODO  
+## nc
+TODO  
 Netcat. Multi-tool for anything TCP/UDP/IP.  
 
-## nmap TODO
+## nmap
+TODO
 Port scanner.
 
 `-p` Scan one or a range of ports or all ports. Ex. `-p 1-1000`,  for all ports `-p-`  
 
-## openssl TODO
+## openssl
+TODO
 A tool for everything ssl/tls. Can be used to connect with SSL encryption, generate digital certs, etc. This tool has a ton of subcommands.
 
 **s_client**
@@ -195,13 +212,15 @@ Connect as a client to a host/server using SSL/TLS. `man openssl-s_client`
 
 Basic ex. `openssl s_client -connect localhost:1001`  
 
-## pacstrap TODO
+## pacstrap
+TODO
 Package manager for ArchLinux distros.  
 
 ## parted
 Shell-based drive partitioning
 
-## ping TODO
+## ping
+TODO
 
 ## rm
 Remove files, directories, etc...  
@@ -218,13 +237,16 @@ Remove files, directories, etc...
 `rm ../foo.txt` Delete file in parent directory  
 `rm -fvr foobar` Force delete everything inside foobar  
 
-## rmdir TODO
+## rmdir
+TODO
 Remove folder(s)
   
-## route TODO
+## route
+TODO
 Show and change routing table
 
-## sed TODO
+## sed
+TODO
 
 ## sha256sum  
 Get sha256 hash.
@@ -404,7 +426,8 @@ Print OS info
 
 `-a` Print all info  
 
-## uniq TODO  
+## uniq
+TODO  
 Filter ADJACENT matching lines and merges those repeating lines into 1. It's not magic, it's a compression algorithm.  
 `-c` Adds a column for the number of occurrances of the value  
 
