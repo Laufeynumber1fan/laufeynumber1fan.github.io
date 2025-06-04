@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+nav_exclude: true
 ---
 <table>
     <tbody align=center>

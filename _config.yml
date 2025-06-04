@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 markdown: kramdown
 kramdown:
   input: GFM
   parse_block_html: true
+=======
+>>>>>>> 21b415f (Tweaked settings)
 theme: minima
 minima:
   skin: auto
