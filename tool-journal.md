@@ -11,6 +11,9 @@ nav_order: 2
   margin: 0 auto;
 }
 </style>
+```
+The industrial revolution and its consenquences >:(
+```
 ## alias
 TODO
 Set aliases for commands <ins>temporarily</ins>.
@@ -62,6 +65,9 @@ Do SHA256 hash (you can also do this with <a href=https://laufeynumber1fan.githu
 TODO
 Get file from url. Similar to wget
 
+## cut
+TODO
+
 ## date
 Print system date and time.
   
@@ -74,15 +80,17 @@ Print file system usage.
 ## diff
 TODO
 Compare the files line by line.  
-`diff file1 file2`  
+`diff [file1] [file2]`  
 
 ## dig
 TODO  
 DNS lookup utility.  
 
-
 ## fdisk
 Interactive drive partitioning.
+
+## find
+TODO
 
 ## gpg  
 The successor to apt-key, gpg is a keyring manager, prominently used in apt for signing packages and preventing malicious repos from installing packages. Kinda like TLS in a way.
@@ -109,12 +117,10 @@ TODO
 
 ## gunzip
 Unzip `.gz` files, but if you want to unzip `.tar.gz`, use `tar`.
-
-`gunzip foo.gz`
+`gunzip [foo.gz]`
 
 ## ifconfig
 TODO 
-
 
 ## ip
 TODO
@@ -134,6 +140,13 @@ See also: [Red Hat blog](https://www.redhat.com/en/blog/jobs-bg-fg)
 ## jq
 TODO
 Used for parsing json files. Good synergy with zeek json logs.
+
+## locate
+Aka `plocate`. Find file names quickly. Kinda like [find](https://laufeynumber1fan.github.io/tool-journal.html#find) but less bulky.
+`locate [filename]`
+
+`-i` ignore-case.  
+`--regex` apply regex.  
 
 ## less
 Used for displaying long cmdline outputs  
@@ -201,7 +214,26 @@ Text editor (not installed by default on bash, however [vi](https://laufeynumber
 
 ## nc
 TODO  
-Netcat. Multi-tool for anything TCP/UDP/IP.  
+Netcat. Multi-tool for anything TCP/UDP/IP. Legacy tool succeeded by [ncat](https://laufeynumber1fan.github.io/tool-journal.html#ncat).
+
+## ncat
+`ncat` is not the same as [nc](https://laufeynumber1fan.github.io/tool-journal.html#nc). `ncat` is part of the nmap suite of tools with more functionality. `nc` is the legacy tool but means it is most likely installed/packaged on distros by default while `ncat` is not.  
+
+still TODO  
+
+`-c 'foo'` Execute something upon connection.  
+`-k` Keep-open connection upon doing something. Also allow multiple connections.  
+
+Example:  
+Make port 8000 to listen for `ncat` connections:  
+`ncat -l localhost 8000`  
+
+On a different shell, connect to port 8000:  
+`ncat 8000`
+
+Further reading:
+[Simple backdoor with ncat](https://laufeynumber1fan.github.io/addendums.html#simple-backdoor-with-ncat)
+
 
 ## nmap
 TODO
@@ -284,6 +316,22 @@ Non-interactive drive partitioning (like fdisk).
 Use this to sort the names on the 2nd column `sort -t: -k2 foo.txt`
 
 [2]: With really big outputs, `sort` may not have enough space inside it's tmp directory to actually do sorting. Do `-T .` to specify the current directory to be used as temp space.  
+
+## ss
+Dump **s**ocket **s**tatistics. Use as superuser to reveal process information.  
+
+`-t` Display tcp ports.  
+`-u` Display udp ports.  
+`-a` Display both listening and non-listening.  
+`-l` Listening ports only.  
+`-B` Bound/connecting ports only.  
+`-e` Show extended info.  
+`-n` Don't resolve names. Port numbers and IP addresses only.  
+
+Examples:  
+`ss`  
+`sudo ss -tua | grep 'http'`  
+`sudo ss -tuaen`  
 
 ## ssh
 OpenSSH client.  
@@ -450,6 +498,9 @@ whois lookup on command line.
 `-H` Hide legal disclaimers.  
 
 Example: `whois google.com | less`
+
+## xargs
+TODO
 
 ## xmllint  
   

