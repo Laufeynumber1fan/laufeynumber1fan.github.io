@@ -1,13 +1,18 @@
 ---
 layout: default
-title: Tool Journal
-nav_exclude: true
 ---
+<style>
+.wrapper {
+  width: 80%;
+  max-width: none;
+  margin: 0 auto;
+}
+</style>
 ## alias
 TODO
 Set aliases for commands <ins>temporarily</ins>.
 
-[How to set an alias permanently in bash or zsh](https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/addendums.md#how-to-make-aliases-permanent-in-bash-or-zsh)
+[How to set an alias permanently in bash or zsh](https://laufeynumber1fan.github.io/addendums.html#how-to-make-aliases-permanent-in-bash-or-zsh)
 
 ## awk
 TODO
@@ -25,7 +30,7 @@ This adds a period at the end of every line `awk {print $0 "."}`
 `-F` Field separator  
 
 Good tutorial on awk [here](https://learnbyexample.github.io/learn_gnuawk/awk-introduction.html).
-For interactive exercises see [addendum](https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/addendums.md#interactive-awk-exercises)
+For interactive exercises see [addendum](https://laufeynumber1fan.github.io/addendums.html#interactive-awk-exercises)
 
 ## apt
 TODO
@@ -45,10 +50,10 @@ Print information and properties of pcaps. Detects out of order packets.
 `-A` All information (does this with no given arguments).  
 
 ## cksum
-Get checksums of file. You can choose a hashing algorithm to apply. For MD5 checksums see [md5sum](https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/wthat_tools.md#md5sum). MD5 is usually done for file integrity, SHA256 is used for password storage and digital certificates.
+Get checksums of file. You can choose a hashing algorithm to apply. For MD5 checksums see [md5sum](https://laufeynumber1fan.github.io/tool-journal.html#md5sum). MD5 is usually done for file integrity, SHA256 is used for password storage and digital certificates.
 
 With no options, it does 32 bit CRC by default `cksum foo.exe`  
-Do SHA256 hash (you can also do this with <a href=https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/wthat_tools.md#sha256sum>sha256sum</a>)`cksum -a sha256 foo.exe`  
+Do SHA256 hash (you can also do this with <a href=https://laufeynumber1fan.github.io/tool-journal.html#sha256sum>sha256sum</a>)`cksum -a sha256 foo.exe`  
 
 ## curl
 TODO
@@ -87,7 +92,7 @@ Note: Move/store keyrings (.gpg) files in `/usr/share/keyrings/`
 
 Example:
 Initialise a new keyring from kali
-Get the keyring with [curl](https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/wthat_tools.md#curl), save it to the correct dir  
+Get the keyring with [curl](https://laufeynumber1fan.github.io/tool-journal.html#curl), save it to the correct dir  
 `sudo curl https://archive.kali.org/archive-keyring.gpg -o /usr/share/keyrings/kali-archive-keyring.gpg`  
 Intialise it with gpg  
 `gpg --no-default-keyring --keyring /usr/share/keyrings/kali-archive-keyring.gpg -k /usr/share/keyrings/kali-archive-keyring.gpg`
@@ -181,7 +186,7 @@ Get hash of file `md5sum foo.exe`
 Get hash of files in the current directory `md5sum *`
 
 ## mkswap
-Make a drive into a swap partition. Used in addition to [swapon](https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/wthat_tools.md#swapon).
+Make a drive into a swap partition. Used in addition to [swapon](https://laufeynumber1fan.github.io/tool-journal.html#swapon).
 
 ## mount
 Mount partitioned disks  
@@ -189,7 +194,7 @@ Mount partitioned disks
 
 ## nano
 TODO
-Text editor (not installed by default on bash, however [vi](https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/wthat_tools.md#vi) is!)
+Text editor (not installed by default on bash, however [vi](https://laufeynumber1fan.github.io/tool-journal.html#vi) is!)
 
 ## nc
 TODO  
@@ -229,7 +234,7 @@ Remove files, directories, etc...
 `-f` Force file deletion, no confirmation or logging
 `-i` Prompt yes/no for every file  
 `-I` Prompt yes/no for every 3 files  
-`-r` Recursively delete files in dir and then delete the dir itself (you can also remove folders with [rmdir](https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/wthat_tools.md#rmdir)) 
+`-r` Recursively delete files in dir and then delete the dir itself (you can also remove folders with [rmdir](https://laufeynumber1fan.github.io/tool-journal.html#rmdir)) 
 `-v` Verbose  
 
 **<u>Examples</u>**  
@@ -285,7 +290,7 @@ OpenSSH client.
 `-l` Specify a user (2nd method).
 `-i` Specify an identity file, a .key file that contains a SSH private key.
 
-[1]: [Execute a command with ssh](https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/addendums.md#executing-a-command-on-a-remote-machine-using-SSH-without-getting-a-shell)
+[1]: [Execute a command with ssh](https://laufeynumber1fan.github.io/addendums.html#executing-a-command-on-a-remote-machine-using-SSH-without-getting-a-shell)
 
 ## stty
 Funny terminal settings commands
@@ -330,7 +335,7 @@ Combination of filters `tcpdump -r foo.pcap not port 53 and not port 22`
 Specific source IP `tcpdump -r foo.pcap src 192.168.0.1`
 Combination of filter and args `tcpdump -r foo.pcap -ttttnXc 5 port 80`
 
-To combine tcpdump and tshark see [this](https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/display_filters.md#combining-dumpshark)
+To combine tcpdump and tshark see [this](https://laufeynumber1fan.github.io/addendums.html#combining-dumpshark)
   
 ## tr  
 Translate, replace, delete characters. Applies translations line by line.
@@ -443,14 +448,14 @@ Example: `whois google.com | less`
 
 ## xmllint  
   
-Check an xml file for format errors<sup>[[1]](https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/wthat_tools.md#tshark)</sup> `xmllint foo.xml --noout`  
+Check an xml file for format errors<sup>[[1]](https://laufeynumber1fan.github.io/tool-journal.html#tshark)</sup> `xmllint foo.xml --noout`  
   
 [1]: Used in converting tshark pdml to xml for viewing pcaps in web browsers.
   
 ## xsltproc  
   
 Apply an XSLT stylesheet to an XML to convert it to html `xsltproc foo.xsl foo.xml > foo.html`  
-Get the XLST stylesheet from wireshark and apply it to an XML<sup>[[1]](https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/wthat_tools.md#tshark)</sup> `xsltproc /usr/share/wireshark/pdml2html.xsl foo.xml > foo.html`
+Get the XLST stylesheet from wireshark and apply it to an XML<sup>[[1]](https://laufeynumber1fan.github.io/tool-journal.html#tshark)</sup> `xsltproc /usr/share/wireshark/pdml2html.xsl foo.xml > foo.html`
   
 [1]: Used in converting tshark pdml to xml for viewing pcaps in web browsers.
   
@@ -464,4 +469,4 @@ Get hex of "hello world" `echo -n "hello world" | xxd`
 Without format, get hex of "hello world" `echo -n "hello world" | xxd -p`
 
 ## zeek
-[How to install](https://github.com/Laufeynumber1fan/Mystuff/blob/main/cats/addendums.md#installing-zeek)  
+[How to install](https://laufeynumber1fan.github.io/addendums.html#installing-zeek)  
