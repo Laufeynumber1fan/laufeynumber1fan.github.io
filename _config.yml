@@ -1,7 +1,5 @@
 theme: minima
 minima:
   skin: auto
-  include:
-    - head-custom.html
 header_pages:
   - index.html

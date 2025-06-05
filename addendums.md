@@ -1,9 +1,12 @@
 ---
 layout: default
+Title: Addendums
+nav_include: yes
+nav_order: 3
 ---
 <style>
 .wrapper {
-  width: 80%;
+  width: 60%;
   max-width: none;
   margin: 0 auto;
 }

@@ -1,9 +1,12 @@
 ---
 layout: default
+title: Tools
+nav_include: yes
+nav_order: 2
 ---
 <style>
 .wrapper {
-  width: 80%;
+  width: 60%;
   max-width: none;
   margin: 0 auto;
 }
@@ -335,7 +338,9 @@ Combination of filters `tcpdump -r foo.pcap not port 53 and not port 22`
 Specific source IP `tcpdump -r foo.pcap src 192.168.0.1`
 Combination of filter and args `tcpdump -r foo.pcap -ttttnXc 5 port 80`
 
-To combine tcpdump and tshark see [this](https://laufeynumber1fan.github.io/addendums.html#combining-dumpshark)
+Further reading:  
+[Digest big pcaps](https://laufeynumber1fan.github.io/addendums.html#digest-big-pcaps)  
+
   
 ## tr  
 Translate, replace, delete characters. Applies translations line by line.
