@@ -2,7 +2,6 @@
 layout: default
 title: Tools
 nav_include: yes
-nav_order: 2
 ---
 <style>
 .wrapper {
@@ -214,7 +213,11 @@ Text editor (not installed by default on bash, however [vi](https://laufeynumber
 
 ## nc
 TODO  
-Netcat. Multi-tool for anything TCP/UDP/IP. Legacy tool succeeded by [ncat](https://laufeynumber1fan.github.io/tool-journal.html#ncat).
+Netcat. Multi-tool for anything TCP/UDP/IP. Legacy tool succeeded by [ncat](https://laufeynumber1fan.github.io/tool-journal.html#ncat).  
+
+In case the shell invokes `nc` as `ncat` , use `/bin/nc.traditional`
+
+`-z` simple port scan.  
 
 ## ncat
 `ncat` is not the same as [nc](https://laufeynumber1fan.github.io/tool-journal.html#nc). `ncat` is part of the nmap suite of tools with more functionality. `nc` is the legacy tool but means it is most likely installed/packaged on distros by default while `ncat` is not.  
@@ -223,6 +226,8 @@ still TODO
 
 `-c 'foo'` Execute something upon connection.  
 `-k` Keep-open connection upon doing something. Also allow multiple connections.  
+`-z` does nothing.<sup>[1]</sup>
+`-v` Verbose.  
 
 Example:  
 Make port 8000 to listen for `ncat` connections:  
@@ -233,7 +238,10 @@ On a different shell, connect to port 8000:
 
 Further reading:
 [Simple backdoor with ncat](https://laufeynumber1fan.github.io/addendums.html#simple-backdoor-with-ncat)
+[-z in ncat vs nc](https://laufeynumber1fan.github.io/addendums.html#z-in-ncat-vs-nc)
 
+Practice tool in:  
+linuxzoo.net [1c](https://linuxzoo.net/page/lab_kali2024-4/wk01c.html) and [4a](https://linuxzoo.net/page/lab_kali2024-4/wk04a.html)
 
 ## nmap
 TODO
@@ -507,7 +515,10 @@ TODO
 Check an xml file for format errors<sup>[[1]](https://laufeynumber1fan.github.io/tool-journal.html#tshark)</sup> `xmllint foo.xml --noout`  
   
 [1]: Used in converting tshark pdml to xml for viewing pcaps in web browsers.
-  
+
+[![](/assets/images/codey.jpg 'Kali Linux')](https://codecademy.com) 
+## xprobe2
+
 ## xsltproc  
   
 Apply an XSLT stylesheet to an XML to convert it to html `xsltproc foo.xsl foo.xml > foo.html`  

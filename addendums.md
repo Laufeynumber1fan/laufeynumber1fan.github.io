@@ -14,6 +14,16 @@ nav_order: 3
 ```
 ## Unsorted snippets for general tips. Most of these have been linked from other files.
 ```
+
+## 2>&1
+In bash, there is something called `stdout`, `stderr`, and `stdin` (std means 'Standard').  
+
+`stdin` is for user input and is irrelevant in this note, however `2>&1` means output (&1) and errors (&2) are combined into the same output.  
+
+Usual behavior from commands <ins>will</ins> output `stdout` and `stderr` in the same shell, but in cases of exceptions, `2>&1` can be used to display errors on the shell.
+
+P.S: `2>` is used to direct errors.  
+
 ## About [drive partitioning](https://en.wikipedia.org/wiki/Disk_partitioning#Unix-like_systems) in Linux.  
 > A common minimal configuration for Linux systems is to use three partitions: one holding the system files mounted on "/" (the root directory), one holding user configuration files and data mounted on /home (home directory), and a swap partition.
   
@@ -169,3 +179,12 @@ You can create a simple backdoor with [ncat](https://laufeynumber1fan.github.io/
 `-l` Make port 7890 to listen for ncat connections.  
 `-c` Run a bash shell upon connection.  
 `-k` Allow multiple connections (in this case shells).  
+
+## -z in ncat vs nc
+[ncat](laufeynumber1fan.github.io/tool-journal.html#ncat) is the child of its parent [nc](laufeynumber1fan.github.io/tool-journal.html#nc), so why is there `-z` (port scanning) in `nc` but no port scanning in `ncat`.  
+
+`ncat` is packaged with nmap so when making the successor the `nc`, the nmap developers removed `ncat`'s `-z` feature because port scanning usage should be in `nmap` itself.  
+
+That is why the older `nc` tool still has port scanning features albeit less developed than nmap.  
+
+`nc -zv [HOST] [1-9999]`  
