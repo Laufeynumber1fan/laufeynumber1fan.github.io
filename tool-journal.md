@@ -19,8 +19,7 @@ nav_include: yes
   #shrimple {
     max-width: 80%;
   }
-</style>
-The industrial revolution and its consenquences  
+</style>  
 ![](/src/shrimple.png){:#shrimple}
 ## alias
 TODO
