@@ -1,7 +1,9 @@
 theme: minima
 minima:
   skin: auto
-header_pages:
-  - tool-journal.md
-  - resources.md
-  - addendums.md
+  nav_pages:
+    - tool-journal.md
+    - resources.md
+    - addendums.md
+author:
+    name: laufeynumber1fan
