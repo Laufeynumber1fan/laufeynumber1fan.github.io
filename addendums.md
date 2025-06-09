@@ -2,14 +2,13 @@
 layout: default
 Title: Addendums
 nav_include: yes
-nav_order: 3
 ---
 <style>
-.wrapper {
-  width: 60%;
+  .page-content > .wrapper {
+  width: 50%;
   max-width: none;
-  margin: 0 auto;
-}
+  overflow:visible;
+  }
 </style>
 ```
 ## Unsorted snippets for general tips. Most of these have been linked from other files.

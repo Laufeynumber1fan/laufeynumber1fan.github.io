@@ -2,7 +2,6 @@ theme: minima
 minima:
   skin: auto
 header_pages:
-  - index.html
   - tool-journal.md
   - resources.md
   - addendums.md
