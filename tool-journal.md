@@ -2,22 +2,31 @@
 layout: default
 title: Tools
 nav_include: yes
+nav-order: 1
 ---
 <style>
-.wrapper {
-  width: 60%;
+  .page-content > .wrapper {
+  width: 50%;
   max-width: none;
-  margin: 0 auto;
-}
+  overflow:visible;
+  }
+
+  h2 > img {
+    width: 18px;
+    padding: 0 0.2em 0 0.2em;
+  }
+
+  #shrimple {
+    max-width: 80%;
+  }
 </style>
-```
-The industrial revolution and its consenquences >:(
-```
+The industrial revolution and its consenquences  
+![](/src/shrimple.png){:#shrimple}
 ## alias
 TODO
 Set aliases for commands <ins>temporarily</ins>.
 
-[How to set an alias permanently in bash or zsh](https://laufeynumber1fan.github.io/addendums.html#how-to-make-aliases-permanent-in-bash-or-zsh)
+[How to set an alias permanently in bash or zsh](/addendums.html#how-to-make-aliases-permanent-in-bash-or-zsh)
 
 ## awk
 TODO
@@ -35,7 +44,7 @@ This adds a period at the end of every line `awk {print $0 "."}`
 `-F` Field separator  
 
 Good tutorial on awk [here](https://learnbyexample.github.io/learn_gnuawk/awk-introduction.html).
-For interactive exercises see [addendum](https://laufeynumber1fan.github.io/addendums.html#interactive-awk-exercises)
+For interactive exercises see [addendum](/addendums.html#interactive-awk-exercises)
 
 ## apt
 TODO
@@ -55,10 +64,10 @@ Print information and properties of pcaps. Detects out of order packets.
 `-A` All information (does this with no given arguments).  
 
 ## cksum
-Get checksums of file. You can choose a hashing algorithm to apply. For MD5 checksums see [md5sum](https://laufeynumber1fan.github.io/tool-journal.html#md5sum). MD5 is usually done for file integrity, SHA256 is used for password storage and digital certificates.
+Get checksums of file. You can choose a hashing algorithm to apply. For MD5 checksums see [md5sum](/tool-journal.html#md5sum). MD5 is usually done for file integrity, SHA256 is used for password storage and digital certificates.
 
 With no options, it does 32 bit CRC by default `cksum foo.exe`  
-Do SHA256 hash (you can also do this with <a href=https://laufeynumber1fan.github.io/tool-journal.html#sha256sum>sha256sum</a>)`cksum -a sha256 foo.exe`  
+Do SHA256 hash (you can also do this with <a href=/tool-journal.html#sha256sum>sha256sum</a>)`cksum -a sha256 foo.exe`  
 
 ## curl
 TODO
@@ -79,7 +88,7 @@ Print file system usage.
 ## diff
 TODO
 Compare the files line by line.  
-`diff [file1] [file2]`  
+`diff <file1> <file2>`  
 
 ## dig
 TODO  
@@ -95,14 +104,14 @@ TODO
 The successor to apt-key, gpg is a keyring manager, prominently used in apt for signing packages and preventing malicious repos from installing packages. Kinda like TLS in a way.
 
 `--no-default-keyring` Very necessary command that prevents a new keyring into becoming a default keyring. Linux distros already have a configured default keyring so adding one is gonna add a vulnerability.
-`--keyring file` Add the file to the list of keyrings<sup>[1]</sup>
+`--keyring file` Add the file to the list of keyrings<sup>(1)</sup>
 
 
 Note: Move/store keyrings (.gpg) files in `/usr/share/keyrings/`
 
 Example:
 Initialise a new keyring from kali
-Get the keyring with [curl](https://laufeynumber1fan.github.io/tool-journal.html#curl), save it to the correct dir  
+Get the keyring with [curl](/tool-journal.html#curl), save it to the correct dir  
 `sudo curl https://archive.kali.org/archive-keyring.gpg -o /usr/share/keyrings/kali-archive-keyring.gpg`  
 Intialise it with gpg  
 `gpg --no-default-keyring --keyring /usr/share/keyrings/kali-archive-keyring.gpg -k /usr/share/keyrings/kali-archive-keyring.gpg`
@@ -112,11 +121,11 @@ Stackoverflow help: [What commands exactly should replace the deprecated apt-key
 ## grep
 TODO
 
-[1]: [Where GREP came from](https://www.youtube.com/watch?v=NTfOnGZUZDk)  
+(1): [Where GREP came from](https://www.youtube.com/watch?v=NTfOnGZUZDk)  
 
 ## gunzip
 Unzip `.gz` files, but if you want to unzip `.tar.gz`, use `tar`.
-`gunzip [foo.gz]`
+`gunzip <foo.gz>`
 
 ## ifconfig
 TODO 
@@ -141,8 +150,8 @@ TODO
 Used for parsing json files. Good synergy with zeek json logs.
 
 ## locate
-Aka `plocate`. Find file names quickly. Kinda like [find](https://laufeynumber1fan.github.io/tool-journal.html#find) but less bulky.
-`locate [filename]`
+Aka `plocate`. Find file names quickly. Kinda like [find](/tool-journal.html#find) but less bulky.
+`locate <filename>`
 
 `-i` ignore-case.  
 `--regex` apply regex.  
@@ -201,7 +210,7 @@ Get hash of file `md5sum foo.exe`
 Get hash of files in the current directory `md5sum *`
 
 ## mkswap
-Make a drive into a swap partition. Used in addition to [swapon](https://laufeynumber1fan.github.io/tool-journal.html#swapon).
+Make a drive into a swap partition. Used in addition to [swapon](/tool-journal.html#swapon).
 
 ## mount
 Mount partitioned disks  
@@ -209,24 +218,24 @@ Mount partitioned disks
 
 ## nano
 TODO
-Text editor (not installed by default on bash, however [vi](https://laufeynumber1fan.github.io/tool-journal.html#vi) is!)
+Text editor (not installed by default on bash, however [vi](/tool-journal.html#vi) is!)
 
 ## nc
 TODO  
-Netcat. Multi-tool for anything TCP/UDP/IP. Legacy tool succeeded by [ncat](https://laufeynumber1fan.github.io/tool-journal.html#ncat).  
+Netcat. Multi-tool for anything TCP/UDP/IP. Legacy tool succeeded by [ncat](/tool-journal.html#ncat).  
 
 In case the shell invokes `nc` as `ncat` , use `/bin/nc.traditional`
 
 `-z` simple port scan.  
 
-## ncat
-`ncat` is not the same as [nc](https://laufeynumber1fan.github.io/tool-journal.html#nc). `ncat` is part of the nmap suite of tools with more functionality. `nc` is the legacy tool but means it is most likely installed/packaged on distros by default while `ncat` is not.  
+## ncat![](/src/kali.ico 'Kali Linux')
+`ncat` is not the same as [nc](/tool-journal.html#nc). `ncat` is part of the nmap suite of tools with more functionality. `nc` is the legacy tool but means it is most likely installed/packaged on distros by default while `ncat` is not.  
 
 still TODO  
 
 `-c 'foo'` Execute something upon connection.  
 `-k` Keep-open connection upon doing something. Also allow multiple connections.  
-`-z` does nothing.<sup>[1]</sup>
+`-z` does nothing.<sup>(1)</sup>
 `-v` Verbose.  
 
 Example:  
@@ -236,18 +245,27 @@ Make port 8000 to listen for `ncat` connections:
 On a different shell, connect to port 8000:  
 `ncat 8000`
 
-Further reading:
-[Simple backdoor with ncat](https://laufeynumber1fan.github.io/addendums.html#simple-backdoor-with-ncat)
-[-z in ncat vs nc](https://laufeynumber1fan.github.io/addendums.html#z-in-ncat-vs-nc)
+Further reading:  
+[Simple backdoor with ncat](/addendums.html#simple-backdoor-with-ncat)  
+(1): [-z in ncat vs nc](/addendums.html#z-in-ncat-vs-nc)  
 
 Practice tool in:  
-linuxzoo.net [1c](https://linuxzoo.net/page/lab_kali2024-4/wk01c.html) and [4a](https://linuxzoo.net/page/lab_kali2024-4/wk04a.html)
+linuxzoo.net [1c](https://linuxzoo.net/page/lab_kali2024-4/wk01c.html#frm_15) and [4a](https://linuxzoo.net/page/lab_kali2024-4/wk04a.html#frm_12)  
 
-## nmap
+## nmap![](/src/kali.ico 'Kali Linux')
 TODO
-Port scanner.
+Port scanner. Has its own scripting engine.<sup>(1)</sup>
 
 `-p` Scan one or a range of ports or all ports. Ex. `-p 1-1000`,  for all ports `-p-`  
+`sn` No port scanning.  
+`-n` No name resolution.  
+`-O` OS fingerprinting.  
+`-A` Aggressive scan (shorthand for `-sVsCO`).  
+
+(1): `nmap` has a .db file that contains info on built-in scripts. `/usr/share/nmap/scripts/script.db`
+
+Practice tool in:
+linuxzoo.net (intro to scripting) [4a](linuxzoo.net/page/lab_kali2024-4/wk04a.html#frm_19)  
 
 ## openssl
 TODO
@@ -255,7 +273,7 @@ A tool for everything ssl/tls. Can be used to connect with SSL encryption, gener
 
 **s_client**
 Connect as a client to a host/server using SSL/TLS. `man openssl-s_client`  
-`-connect [host:port]`  
+`-connect <host:port>`  
 `-quiet` Supresses session information. Also enters the openssl into a "basic command" mode. See CONNECTED COMMANDS (BASIC) in s_client man page.  
 
 Basic ex. `openssl s_client -connect localhost:1001`  
@@ -277,7 +295,7 @@ Remove files, directories, etc...
 `-f` Force file deletion, no confirmation or logging
 `-i` Prompt yes/no for every file  
 `-I` Prompt yes/no for every 3 files  
-`-r` Recursively delete files in dir and then delete the dir itself (you can also remove folders with [rmdir](https://laufeynumber1fan.github.io/tool-journal.html#rmdir)) 
+`-r` Recursively delete files in dir and then delete the dir itself (you can also remove folders with [rmdir](/tool-journal.html#rmdir)) 
 `-v` Verbose  
 
 **<u>Examples</u>**  
@@ -307,12 +325,12 @@ Non-interactive drive partitioning (like fdisk).
   
 ## sort
 `-n` Numeric sort  
-`-t -k` Sort based on values from a different column<sup>[1]</sup>  
+`-t -k` Sort based on values from a different column<sup>(1)</sup>  
 `-r` Reverse sort  
 `-u` Unique-only (remove duplicates)  
-`-T` Specify tmp directory<sup>[2]</sup>
+`-T` Specify tmp directory<sup>(2)</sup>
 
-[1]: `-t:` is field separator, `-k` is sort based on location. To sort based on the 2nd value in .txt file that looks like this: 
+(1): `-t:` is field separator, `-k` is sort based on location. To sort based on the 2nd value in .txt file that looks like this: 
 ```
 1: Mark
 2: James
@@ -323,7 +341,7 @@ Non-interactive drive partitioning (like fdisk).
 ```
 Use this to sort the names on the 2nd column `sort -t: -k2 foo.txt`
 
-[2]: With really big outputs, `sort` may not have enough space inside it's tmp directory to actually do sorting. Do `-T .` to specify the current directory to be used as temp space.  
+(2): With really big outputs, `sort` may not have enough space inside it's tmp directory to actually do sorting. Do `-T .` to specify the current directory to be used as temp space.  
 
 ## ss
 Dump **s**ocket **s**tatistics. Use as superuser to reveal process information.  
@@ -343,13 +361,13 @@ Examples:
 
 ## ssh
 OpenSSH client.  
-`ssh user@host`<sup>[1]</sup>  
+`ssh user@host`<sup>(1)</sup>  
 
 `-p` Specify a port (default is 22).
 `-l` Specify a user (2nd method).
 `-i` Specify an identity file, a .key file that contains a SSH private key.
 
-[1]: [Execute a command with ssh](https://laufeynumber1fan.github.io/addendums.html#executing-a-command-on-a-remote-machine-using-SSH-without-getting-a-shell)
+(1): [Execute a command with ssh](/addendums.html#executing-a-command-on-a-remote-machine-using-SSH-without-getting-a-shell)
 
 ## stty
 Funny terminal settings commands
@@ -374,15 +392,15 @@ Examples:
 Make tar.gz `tar -czvf [tar.gz name] [folder/file you want to tar]`  
 Extract tar.gz `tar -xzvf foo.tar.gz`  
 
-## tcpdump  
+## tcpdump![](/src/kali.ico 'Kali Linux')
 Cmdline pcap analyser, similar to tshark but lightweight. Has simpler filters.  
 **Uses [capture filters](https://www.tcpdump.org/manpages/pcap-filter.7.html) for reading and capturing pcaps**  
 
 `-r` Read pcap.  
-`-c [n]` Limit output to n number of packets.  
+`-c <n>` Limit output to n number of packets.  
 `-tttt` Switch time to UTC.  
 `-tt` Switch time to epoch.  
-`--time-stamp-precision` With `-tt` set decimal places.<sup>[1]</sup>  
+`--time-stamp-precision` With `-tt` set decimal places.<sup>(1)</sup>  
 `-n` Don't convert IPs to hostnames.  
 `-X` Print ASCII and hex of payloads. 
 `-e` Print link level/ethernet packet header.
@@ -395,7 +413,7 @@ Specific source IP `tcpdump -r foo.pcap src 192.168.0.1`
 Combination of filter and args `tcpdump -r foo.pcap -ttttnXc 5 port 80`
 
 Further reading:  
-[Digest big pcaps](https://laufeynumber1fan.github.io/addendums.html#digest-big-pcaps)  
+[Digest big pcaps](/addendums.html#digest-big-pcaps)  
 
   
 ## tr  
@@ -406,21 +424,21 @@ Lowercase to uppercase `echo "hello world" | tr 'a-z' 'A-Z'`
 Reverse pipe `tr " " "\t" < input.txt`  
 If a text has inconsistent spaces, use `-s` to squeeze repeated instances into a single translation `tr -s " " "\t" < input.txt`
 
-## tshark
+## tshark![](/src/kali.ico 'Kali Linux')
 Cmdline wireshark, wireshark filters are processed as cmdline arguments.  
-**Only uses [capture filters](https://www.tcpdump.org/manpages/pcap-filter.7.html) for capturing pcaps `-f`. Only uses display filters<sup>refs:[1, ](https://www.wireshark.org/docs/man-pages/wireshark-filter.html)</sup><sup>[2, ](https://www.wireshark.org/docs/dfref/)</sup><sup>[3](https://tshark.dev/setup/)</sup> for reading pcaps `-Y`.**
+**Only uses [capture filters](https://www.tcpdump.org/manpages/pcap-filter.7.html) for capturing pcaps `-f`. Only uses display filters<sup>refs:[1, ](https://www.wireshark.org/docs/man-pages/wireshark-filter.html)</sup><sup>[2, ](https://www.wireshark.org/docs/dfref/)</sup><sup>(3)(https://tshark.dev/setup/)</sup> for reading pcaps `-Y`.**
   
 `-f` Capture packets with pcap-filters/tcpdump expressions.  
-`-Y` Apply [display filters](https://www.wireshark.org/docs/dfref/)<sup>[1]</sup>.  
-`-T` Specify different output formats like `json`, `text`, `fields`<sup>[1]</sup>, etc.  
+`-Y` Apply [display filters](https://www.wireshark.org/docs/dfref/)<sup>(1)</sup>.  
+`-T` Specify different output formats like `json`, `text`, `fields`<sup>(1)</sup>, etc.  
 `-D` Lists all available interfaces to listen for traffic.  
-`-V` Display all packet information verbosely. Use injunction with `-Y`<sup>[2]</sup>.  
+`-V` Display all packet information verbosely. Use injunction with `-Y`<sup>(2)</sup>.  
 `-n` Disable name resolution.  
-`-N` Name resolving options<sup>[4]</sup>.  
+`-N` Name resolving options<sup>(4)</sup>.  
 `-q` Be more quiet, ideally use with `-z`.  
 `-x` Display hex & ASCII dump.  
-`-E` Display options for headers when using `-T`<sup>[3]</sup>.  
-`--export-objects` Export files in tshark, makes a separate directory.<sup>[5]</sup>  
+`-E` Display options for headers when using `-T`<sup>(3)</sup>.  
+`--export-objects` Export files in tshark, makes a separate directory.<sup>(5)</sup>  
   
 Advanced help:  
 `-G` Prints every wireshark filter. Use injunction with `egrep "\sPATTERN\." | less -Sx40`.  
@@ -431,15 +449,15 @@ Statistics:
 `-z` Protocol Hierarchy  
 `-z help | less` Display help  
 
-[1a]: `-Y`, `-T fields`, `-e` are the bread and butter, `-Y` finds packets based on the display filter. `-T fields` and `-e` modifies the output to specific fields. See [1b].  
-[4]: Specify name resolution options, by default tshark already does `-N dmN`. However `-N dmn` is probably more useful when reading pcaps because it will get name resolution from the DNS packets inside the pcap instead of external resolution (`-N N`) does this.  
+(1a): `-Y`, `-T fields`, `-e` are the bread and butter, `-Y` finds packets based on the display filter. `-T fields` and `-e` modifies the output to specific fields. See (1b).  
+(4): Specify name resolution options, by default tshark already does `-N dmN`. However `-N dmn` is probably more useful when reading pcaps because it will get name resolution from the DNS packets inside the pcap instead of external resolution (`-N N`) does this.  
 
 <ins>Examples</ins>:  
-[1b]: Display only dns queries `tshark -r foo.pcap -Y "dns.flags.response == 0" -T fields -e dns.qry.name`  
-[2a]: To display packet 100 verbosely `tshark -r foo.pcap -Y frame.number==100 -V`  
-[2b]: To display a specific tcp stream versbosely `tshark -r foo.pcap -Y "tcp.stream eq 0" -V`  
-[3]: Add header fields for custom columns `tshark -r foo.pcap -E header=y -T fields -e ip.src -e ip.dst -e ip.proto -c 5 | less -sX40`  
-[5]: Export http files, exports it to a dir called files `tshark -r foo.pcap --export-objects http,files`  
+(1b): Display only dns queries `tshark -r foo.pcap -Y "dns.flags.response == 0" -T fields -e dns.qry.name`  
+(2a): To display packet 100 verbosely `tshark -r foo.pcap -Y frame.number==100 -V`  
+(2b): To display a specific tcp stream versbosely `tshark -r foo.pcap -Y "tcp.stream eq 0" -V`  
+(3): Add header fields for custom columns `tshark -r foo.pcap -E header=y -T fields -e ip.src -e ip.dst -e ip.proto -c 5 | less -sX40`  
+(5): Export http files, exports it to a dir called files `tshark -r foo.pcap --export-objects http,files`  
 
 Filter for TCP SYN packets then show src and dst ip with dst ports of the connection then sort for most connections `tshark -r foo.pcap -Y tcp.flags==2 -T fields -e ip.src -e ip.dst -e tcp.dstport | sort | uniq -c | sort -n`  
 Filter http content-length which is useful for seeing payload sizes `tshark -r foo.pcap -Y http -T fields -e frame.number -e http.content_length`  
@@ -474,12 +492,12 @@ MOTIONS - moves the cursor but can be combined with commands.
 `w` jump to the next word, selecting its 1st char.  
 `e` until the end of the current word without selecting the next word.  
 `$` go to the end of the current line.  
-`2, 3, 4` Numbers specify repeats of the same motion<sup>[1]</sup>. 
+`2, 3, 4` Numbers specify repeats of the same motion<sup>(1)</sup>. 
 
 <ins>Examples</ins>  
 `:help wq` To get help on a specific command, this one is for wq. This actually opens a 2nd instance of vi, so you use `:q` to get out of help.  
-[1]: `2w` Jump 2 words, `3$` Go to the end of current line + jump 2 lines.  
-[2]:
+(1): `2w` Jump 2 words, `3$` Go to the end of current line + jump 2 lines.  
+(2):
 
 ## ufw  
 Linux netfilter firewall. Installed by default on ubuntu.  
@@ -512,19 +530,28 @@ TODO
 
 ## xmllint  
   
-Check an xml file for format errors<sup>[[1]](https://laufeynumber1fan.github.io/tool-journal.html#tshark)</sup> `xmllint foo.xml --noout`  
+Check an xml file for format errors<sup>[(1)](/tool-journal.html#tshark)</sup> `xmllint foo.xml --noout`  
   
-[1]: Used in converting tshark pdml to xml for viewing pcaps in web browsers.
+(1): Used in converting tshark pdml to xml for viewing pcaps in web browsers.
 
-[![](/assets/images/codey.jpg 'Kali Linux')](https://codecademy.com) 
-## xprobe2
+## xprobe2![](/src/kali.ico 'Kali Linux')
+OS fingerprinting tool.  
+`xprobe <target IP>`  
+
+`-v` Verbose.  
+`-p <proto:portnum:state>` Specify protocol, port, and state to test OS.<sup>(1)</sup>  
+
+(1): For example `-p tcp:80:open` will have xprobe2 sending SYN ACKs to port 80. See man page.  
+
+Practice tool in:  
+linuxzoo.net [4a](https://linuxzoo.net/page/lab_kali2024-4/wk04a.html#frm_13)
 
 ## xsltproc  
   
 Apply an XSLT stylesheet to an XML to convert it to html `xsltproc foo.xsl foo.xml > foo.html`  
-Get the XLST stylesheet from wireshark and apply it to an XML<sup>[[1]](https://laufeynumber1fan.github.io/tool-journal.html#tshark)</sup> `xsltproc /usr/share/wireshark/pdml2html.xsl foo.xml > foo.html`
+Get the XLST stylesheet from wireshark and apply it to an XML<sup>(1)</sup> `xsltproc /usr/share/wireshark/pdml2html.xsl foo.xml > foo.html`  
   
-[1]: Used in converting tshark pdml to xml for viewing pcaps in web browsers.
+(1): Used in converting tshark pdml to xml for viewing pcaps in web browsers.
   
 ## xxd
 
@@ -536,4 +563,4 @@ Get hex of "hello world" `echo -n "hello world" | xxd`
 Without format, get hex of "hello world" `echo -n "hello world" | xxd -p`
 
 ## zeek
-[How to install](https://laufeynumber1fan.github.io/addendums.html#installing-zeek)  
+[How to install](/addendums.html#installing-zeek)  

@@ -28,26 +28,35 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/">Home</a></div>
+        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/tool-journal.html">Tools</a><a class="page-link" href="/resources.html">Resources</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <style>
-.wrapper {
-  width: 60%;
+  .page-content > .wrapper {
+  width: 50%;
   max-width: none;
-  margin: 0 auto;
-}
+  overflow:visible;
+  }
+
+  h2 > img {
+    width: 18px;
+    padding: 0 0.2em 0 0.2em;
+  }
+
+  #shrimple {
+    max-width: 80%;
+  }
 </style>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The industrial revolution and its consenquences &gt;:(
-</code></pre></div></div>
+<p>The industrial revolution and its consenquences<br />
+<img src="/src/shrimple.png" alt="" id="shrimple" /></p>
 <h2 id="alias">alias</h2>
 <p>TODO
 Set aliases for commands <ins>temporarily</ins>.</p>
 
-<p><a href="https://laufeynumber1fan.github.io/addendums.html#how-to-make-aliases-permanent-in-bash-or-zsh">How to set an alias permanently in bash or zsh</a></p>
+<p><a href="/addendums.html#how-to-make-aliases-permanent-in-bash-or-zsh">How to set an alias permanently in bash or zsh</a></p>
 
 <h2 id="awk">awk</h2>
 <p>TODO
@@ -64,7 +73,7 @@ This adds a period at the end of every line <code class="language-plaintext high
 <p><code class="language-plaintext highlighter-rouge">-F</code> Field separator</p>
 
 <p>Good tutorial on awk <a href="https://learnbyexample.github.io/learn_gnuawk/awk-introduction.html">here</a>.
-For interactive exercises see <a href="https://laufeynumber1fan.github.io/addendums.html#interactive-awk-exercises">addendum</a></p>
+For interactive exercises see <a href="/addendums.html#interactive-awk-exercises">addendum</a></p>
 
 <h2 id="apt">apt</h2>
 <p>TODO
@@ -84,10 +93,10 @@ Print information and properties of pcaps. Detects out of order packets.</p>
 <code class="language-plaintext highlighter-rouge">-A</code> All information (does this with no given arguments).</p>
 
 <h2 id="cksum">cksum</h2>
-<p>Get checksums of file. You can choose a hashing algorithm to apply. For MD5 checksums see <a href="https://laufeynumber1fan.github.io/tool-journal.html#md5sum">md5sum</a>. MD5 is usually done for file integrity, SHA256 is used for password storage and digital certificates.</p>
+<p>Get checksums of file. You can choose a hashing algorithm to apply. For MD5 checksums see <a href="/tool-journal.html#md5sum">md5sum</a>. MD5 is usually done for file integrity, SHA256 is used for password storage and digital certificates.</p>
 
 <p>With no options, it does 32 bit CRC by default <code class="language-plaintext highlighter-rouge">cksum foo.exe</code><br />
-Do SHA256 hash (you can also do this with &lt;a href=https://laufeynumber1fan.github.io/tool-journal.html#sha256sum&gt;sha256sum&lt;/a&gt;)<code class="language-plaintext highlighter-rouge">cksum -a sha256 foo.exe</code></p>
+Do SHA256 hash (you can also do this with &lt;a href=/tool-journal.html#sha256sum&gt;sha256sum&lt;/a&gt;)<code class="language-plaintext highlighter-rouge">cksum -a sha256 foo.exe</code></p>
 
 <h2 id="curl">curl</h2>
 <p>TODO
@@ -108,7 +117,7 @@ Get file from url. Similar to wget</p>
 <h2 id="diff">diff</h2>
 <p>TODO
 Compare the files line by line.<br />
-<code class="language-plaintext highlighter-rouge">diff [file1] [file2]</code></p>
+<code class="language-plaintext highlighter-rouge">diff &lt;file1&gt; &lt;file2&gt;</code></p>
 
 <h2 id="dig">dig</h2>
 <p>TODO<br />
@@ -124,13 +133,13 @@ DNS lookup utility.</p>
 <p>The successor to apt-key, gpg is a keyring manager, prominently used in apt for signing packages and preventing malicious repos from installing packages. Kinda like TLS in a way.</p>
 
 <p><code class="language-plaintext highlighter-rouge">--no-default-keyring</code> Very necessary command that prevents a new keyring into becoming a default keyring. Linux distros already have a configured default keyring so adding one is gonna add a vulnerability.
-<code class="language-plaintext highlighter-rouge">--keyring file</code> Add the file to the list of keyrings<sup><a href="Used in converting tshark pdml to xml for viewing pcaps in web browsers.">1</a></sup></p>
+<code class="language-plaintext highlighter-rouge">--keyring file</code> Add the file to the list of keyrings<sup>(1)</sup></p>
 
 <p>Note: Move/store keyrings (.gpg) files in <code class="language-plaintext highlighter-rouge">/usr/share/keyrings/</code></p>
 
 <p>Example:
 Initialise a new keyring from kali
-Get the keyring with <a href="https://laufeynumber1fan.github.io/tool-journal.html#curl">curl</a>, save it to the correct dir<br />
+Get the keyring with <a href="/tool-journal.html#curl">curl</a>, save it to the correct dir<br />
 <code class="language-plaintext highlighter-rouge">sudo curl https://archive.kali.org/archive-keyring.gpg -o /usr/share/keyrings/kali-archive-keyring.gpg</code><br />
 Intialise it with gpg<br />
 <code class="language-plaintext highlighter-rouge">gpg --no-default-keyring --keyring /usr/share/keyrings/kali-archive-keyring.gpg -k /usr/share/keyrings/kali-archive-keyring.gpg</code></p>
@@ -140,9 +149,11 @@ Intialise it with gpg<br />
 <h2 id="grep">grep</h2>
 <p>TODO</p>
 
+<p>(1): <a href="https://www.youtube.com/watch?v=NTfOnGZUZDk">Where GREP came from</a></p>
+
 <h2 id="gunzip">gunzip</h2>
 <p>Unzip <code class="language-plaintext highlighter-rouge">.gz</code> files, but if you want to unzip <code class="language-plaintext highlighter-rouge">.tar.gz</code>, use <code class="language-plaintext highlighter-rouge">tar</code>.
-<code class="language-plaintext highlighter-rouge">gunzip [foo.gz]</code></p>
+<code class="language-plaintext highlighter-rouge">gunzip &lt;foo.gz&gt;</code></p>
 
 <h2 id="ifconfig">ifconfig</h2>
 <p>TODO</p>
@@ -167,8 +178,8 @@ Show and change ip configuration.</p>
 Used for parsing json files. Good synergy with zeek json logs.</p>
 
 <h2 id="locate">locate</h2>
-<p>Aka <code class="language-plaintext highlighter-rouge">plocate</code>. Find file names quickly. Kinda like <a href="https://laufeynumber1fan.github.io/tool-journal.html#find">find</a> but less bulky.
-<code class="language-plaintext highlighter-rouge">locate [filename]</code></p>
+<p>Aka <code class="language-plaintext highlighter-rouge">plocate</code>. Find file names quickly. Kinda like <a href="/tool-journal.html#find">find</a> but less bulky.
+<code class="language-plaintext highlighter-rouge">locate &lt;filename&gt;</code></p>
 
 <p><code class="language-plaintext highlighter-rouge">-i</code> ignore-case.<br />
 <code class="language-plaintext highlighter-rouge">--regex</code> apply regex.</p>
@@ -226,7 +237,7 @@ Used for getting help manuals of a command. Opens a <code class="language-plaint
 Get hash of files in the current directory <code class="language-plaintext highlighter-rouge">md5sum *</code></p>
 
 <h2 id="mkswap">mkswap</h2>
-<p>Make a drive into a swap partition. Used in addition to <a href="https://laufeynumber1fan.github.io/tool-journal.html#swapon">swapon</a>.</p>
+<p>Make a drive into a swap partition. Used in addition to <a href="/tool-journal.html#swapon">swapon</a>.</p>
 
 <h2 id="mount">mount</h2>
 <p>Mount partitioned disks<br />
@@ -234,24 +245,24 @@ Get hash of files in the current directory <code class="language-plaintext highl
 
 <h2 id="nano">nano</h2>
 <p>TODO
-Text editor (not installed by default on bash, however <a href="https://laufeynumber1fan.github.io/tool-journal.html#vi">vi</a> is!)</p>
+Text editor (not installed by default on bash, however <a href="/tool-journal.html#vi">vi</a> is!)</p>
 
 <h2 id="nc">nc</h2>
 <p>TODO<br />
-Netcat. Multi-tool for anything TCP/UDP/IP. Legacy tool succeeded by <a href="https://laufeynumber1fan.github.io/tool-journal.html#ncat">ncat</a>.</p>
+Netcat. Multi-tool for anything TCP/UDP/IP. Legacy tool succeeded by <a href="/tool-journal.html#ncat">ncat</a>.</p>
 
 <p>In case the shell invokes <code class="language-plaintext highlighter-rouge">nc</code> as <code class="language-plaintext highlighter-rouge">ncat</code> , use <code class="language-plaintext highlighter-rouge">/bin/nc.traditional</code></p>
 
 <p><code class="language-plaintext highlighter-rouge">-z</code> simple port scan.</p>
 
-<h2 id="ncat">ncat</h2>
-<p><code class="language-plaintext highlighter-rouge">ncat</code> is not the same as <a href="https://laufeynumber1fan.github.io/tool-journal.html#nc">nc</a>. <code class="language-plaintext highlighter-rouge">ncat</code> is part of the nmap suite of tools with more functionality. <code class="language-plaintext highlighter-rouge">nc</code> is the legacy tool but means it is most likely installed/packaged on distros by default while <code class="language-plaintext highlighter-rouge">ncat</code> is not.</p>
+<h2 id="ncat">ncat<img src="/src/kali.ico" alt="" title="Kali Linux" /></h2>
+<p><code class="language-plaintext highlighter-rouge">ncat</code> is not the same as <a href="/tool-journal.html#nc">nc</a>. <code class="language-plaintext highlighter-rouge">ncat</code> is part of the nmap suite of tools with more functionality. <code class="language-plaintext highlighter-rouge">nc</code> is the legacy tool but means it is most likely installed/packaged on distros by default while <code class="language-plaintext highlighter-rouge">ncat</code> is not.</p>
 
 <p>still TODO</p>
 
 <p><code class="language-plaintext highlighter-rouge">-c 'foo'</code> Execute something upon connection.<br />
 <code class="language-plaintext highlighter-rouge">-k</code> Keep-open connection upon doing something. Also allow multiple connections.<br />
-<code class="language-plaintext highlighter-rouge">-z</code> does nothing.<sup><a href="Used in converting tshark pdml to xml for viewing pcaps in web browsers.">1</a></sup>
+<code class="language-plaintext highlighter-rouge">-z</code> does nothing.<sup>(1)</sup>
 <code class="language-plaintext highlighter-rouge">-v</code> Verbose.</p>
 
 <p>Example:<br />
@@ -261,18 +272,27 @@ Make port 8000 to listen for <code class="language-plaintext highlighter-rouge">
 <p>On a different shell, connect to port 8000:<br />
 <code class="language-plaintext highlighter-rouge">ncat 8000</code></p>
 
-<p>Further reading:
-<a href="https://laufeynumber1fan.github.io/addendums.html#simple-backdoor-with-ncat">Simple backdoor with ncat</a>
-<a href="https://laufeynumber1fan.github.io/addendums.html#z-in-ncat-vs-nc">-z in ncat vs nc</a></p>
+<p>Further reading:<br />
+<a href="/addendums.html#simple-backdoor-with-ncat">Simple backdoor with ncat</a><br />
+(1): <a href="/addendums.html#z-in-ncat-vs-nc">-z in ncat vs nc</a></p>
 
 <p>Practice tool in:<br />
-linuxzoo.net <a href="https://linuxzoo.net/page/lab_kali2024-4/wk01c.html">1c</a> and <a href="https://linuxzoo.net/page/lab_kali2024-4/wk04a.html">4a</a></p>
+linuxzoo.net <a href="https://linuxzoo.net/page/lab_kali2024-4/wk01c.html#frm_15">1c</a> and <a href="https://linuxzoo.net/page/lab_kali2024-4/wk04a.html#frm_12">4a</a></p>
 
-<h2 id="nmap">nmap</h2>
+<h2 id="nmap">nmap<img src="/src/kali.ico" alt="" title="Kali Linux" /></h2>
 <p>TODO
-Port scanner.</p>
+Port scanner. Has its own scripting engine.<sup>(1)</sup></p>
 
-<p><code class="language-plaintext highlighter-rouge">-p</code> Scan one or a range of ports or all ports. Ex. <code class="language-plaintext highlighter-rouge">-p 1-1000</code>,  for all ports <code class="language-plaintext highlighter-rouge">-p-</code></p>
+<p><code class="language-plaintext highlighter-rouge">-p</code> Scan one or a range of ports or all ports. Ex. <code class="language-plaintext highlighter-rouge">-p 1-1000</code>,  for all ports <code class="language-plaintext highlighter-rouge">-p-</code><br />
+<code class="language-plaintext highlighter-rouge">sn</code> No port scanning.<br />
+<code class="language-plaintext highlighter-rouge">-n</code> No name resolution.<br />
+<code class="language-plaintext highlighter-rouge">-O</code> OS fingerprinting.<br />
+<code class="language-plaintext highlighter-rouge">-A</code> Aggressive scan (shorthand for <code class="language-plaintext highlighter-rouge">-sVsCO</code>).</p>
+
+<p>(1): <code class="language-plaintext highlighter-rouge">nmap</code> has a .db file that contains info on built-in scripts. <code class="language-plaintext highlighter-rouge">/usr/share/nmap/scripts/script.db</code></p>
+
+<p>Practice tool in:
+linuxzoo.net (intro to scripting) <a href="linuxzoo.net/page/lab_kali2024-4/wk04a.html#frm_19">4a</a></p>
 
 <h2 id="openssl">openssl</h2>
 <p>TODO
@@ -280,7 +300,7 @@ A tool for everything ssl/tls. Can be used to connect with SSL encryption, gener
 
 <p><strong>s_client</strong>
 Connect as a client to a host/server using SSL/TLS. <code class="language-plaintext highlighter-rouge">man openssl-s_client</code><br />
-<code class="language-plaintext highlighter-rouge">-connect [host:port]</code><br />
+<code class="language-plaintext highlighter-rouge">-connect &lt;host:port&gt;</code><br />
 <code class="language-plaintext highlighter-rouge">-quiet</code> Supresses session information. Also enters the openssl into a “basic command” mode. See CONNECTED COMMANDS (BASIC) in s_client man page.</p>
 
 <p>Basic ex. <code class="language-plaintext highlighter-rouge">openssl s_client -connect localhost:1001</code></p>
@@ -302,7 +322,7 @@ Package manager for ArchLinux distros.</p>
 <code class="language-plaintext highlighter-rouge">-f</code> Force file deletion, no confirmation or logging
 <code class="language-plaintext highlighter-rouge">-i</code> Prompt yes/no for every file<br />
 <code class="language-plaintext highlighter-rouge">-I</code> Prompt yes/no for every 3 files<br />
-<code class="language-plaintext highlighter-rouge">-r</code> Recursively delete files in dir and then delete the dir itself (you can also remove folders with <a href="https://laufeynumber1fan.github.io/tool-journal.html#rmdir">rmdir</a>) 
+<code class="language-plaintext highlighter-rouge">-r</code> Recursively delete files in dir and then delete the dir itself (you can also remove folders with <a href="/tool-journal.html#rmdir">rmdir</a>) 
 <code class="language-plaintext highlighter-rouge">-v</code> Verbose</p>
 
 <p><strong><u>Examples</u></strong><br />
@@ -332,11 +352,12 @@ Get hash of files in the current directory <code class="language-plaintext highl
 
 <h2 id="sort">sort</h2>
 <p><code class="language-plaintext highlighter-rouge">-n</code> Numeric sort<br />
-<code class="language-plaintext highlighter-rouge">-t -k</code> Sort based on values from a different column<sup><a href="Used in converting tshark pdml to xml for viewing pcaps in web browsers.">1</a></sup><br />
+<code class="language-plaintext highlighter-rouge">-t -k</code> Sort based on values from a different column<sup>(1)</sup><br />
 <code class="language-plaintext highlighter-rouge">-r</code> Reverse sort<br />
 <code class="language-plaintext highlighter-rouge">-u</code> Unique-only (remove duplicates)<br />
-<code class="language-plaintext highlighter-rouge">-T</code> Specify tmp directory<sup><a href="With really big outputs, `sort` may not have enough space inside it's tmp directory to actually do sorting. Do `-T .` to specify the current directory to be used as temp space.">2</a></sup></p>
+<code class="language-plaintext highlighter-rouge">-T</code> Specify tmp directory<sup>(2)</sup></p>
 
+<p>(1): <code class="language-plaintext highlighter-rouge">-t:</code> is field separator, <code class="language-plaintext highlighter-rouge">-k</code> is sort based on location. To sort based on the 2nd value in .txt file that looks like this:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1: Mark
 2: James
 3: Matthew
@@ -345,6 +366,8 @@ Get hash of files in the current directory <code class="language-plaintext highl
 6: Andrew
 </code></pre></div></div>
 <p>Use this to sort the names on the 2nd column <code class="language-plaintext highlighter-rouge">sort -t: -k2 foo.txt</code></p>
+
+<p>(2): With really big outputs, <code class="language-plaintext highlighter-rouge">sort</code> may not have enough space inside it’s tmp directory to actually do sorting. Do <code class="language-plaintext highlighter-rouge">-T .</code> to specify the current directory to be used as temp space.</p>
 
 <h2 id="ss">ss</h2>
 <p>Dump <strong>s</strong>ocket <strong>s</strong>tatistics. Use as superuser to reveal process information.</p>
@@ -364,11 +387,13 @@ Get hash of files in the current directory <code class="language-plaintext highl
 
 <h2 id="ssh">ssh</h2>
 <p>OpenSSH client.<br />
-<code class="language-plaintext highlighter-rouge">ssh user@host</code><sup><a href="Used in converting tshark pdml to xml for viewing pcaps in web browsers.">1</a></sup></p>
+<code class="language-plaintext highlighter-rouge">ssh user@host</code><sup>(1)</sup></p>
 
 <p><code class="language-plaintext highlighter-rouge">-p</code> Specify a port (default is 22).
 <code class="language-plaintext highlighter-rouge">-l</code> Specify a user (2nd method).
 <code class="language-plaintext highlighter-rouge">-i</code> Specify an identity file, a .key file that contains a SSH private key.</p>
+
+<p>(1): <a href="/addendums.html#executing-a-command-on-a-remote-machine-using-SSH-without-getting-a-shell">Execute a command with ssh</a></p>
 
 <h2 id="stty">stty</h2>
 <p>Funny terminal settings commands</p>
@@ -393,15 +418,15 @@ Get hash of files in the current directory <code class="language-plaintext highl
 Make tar.gz <code class="language-plaintext highlighter-rouge">tar -czvf [tar.gz name] [folder/file you want to tar]</code><br />
 Extract tar.gz <code class="language-plaintext highlighter-rouge">tar -xzvf foo.tar.gz</code></p>
 
-<h2 id="tcpdump">tcpdump</h2>
+<h2 id="tcpdump">tcpdump<img src="/src/kali.ico" alt="" title="Kali Linux" /></h2>
 <p>Cmdline pcap analyser, similar to tshark but lightweight. Has simpler filters.<br />
 <strong>Uses <a href="https://www.tcpdump.org/manpages/pcap-filter.7.html">capture filters</a> for reading and capturing pcaps</strong></p>
 
 <p><code class="language-plaintext highlighter-rouge">-r</code> Read pcap.<br />
-<code class="language-plaintext highlighter-rouge">-c [n]</code> Limit output to n number of packets.<br />
+<code class="language-plaintext highlighter-rouge">-c &lt;n&gt;</code> Limit output to n number of packets.<br />
 <code class="language-plaintext highlighter-rouge">-tttt</code> Switch time to UTC.<br />
 <code class="language-plaintext highlighter-rouge">-tt</code> Switch time to epoch.<br />
-<code class="language-plaintext highlighter-rouge">--time-stamp-precision</code> With <code class="language-plaintext highlighter-rouge">-tt</code> set decimal places.<sup><a href="Used in converting tshark pdml to xml for viewing pcaps in web browsers.">1</a></sup><br />
+<code class="language-plaintext highlighter-rouge">--time-stamp-precision</code> With <code class="language-plaintext highlighter-rouge">-tt</code> set decimal places.<sup>(1)</sup><br />
 <code class="language-plaintext highlighter-rouge">-n</code> Don’t convert IPs to hostnames.<br />
 <code class="language-plaintext highlighter-rouge">-X</code> Print ASCII and hex of payloads. 
 <code class="language-plaintext highlighter-rouge">-e</code> Print link level/ethernet packet header.
@@ -414,7 +439,7 @@ Specific source IP <code class="language-plaintext highlighter-rouge">tcpdump -r
 Combination of filter and args <code class="language-plaintext highlighter-rouge">tcpdump -r foo.pcap -ttttnXc 5 port 80</code></p>
 
 <p>Further reading:<br />
-<a href="https://laufeynumber1fan.github.io/addendums.html#digest-big-pcaps">Digest big pcaps</a></p>
+<a href="/addendums.html#digest-big-pcaps">Digest big pcaps</a></p>
 
 <h2 id="tr">tr</h2>
 <p>Translate, replace, delete characters. Applies translations line by line.</p>
@@ -424,21 +449,21 @@ Lowercase to uppercase <code class="language-plaintext highlighter-rouge">echo "
 Reverse pipe <code class="language-plaintext highlighter-rouge">tr " " "\t" &lt; input.txt</code><br />
 If a text has inconsistent spaces, use <code class="language-plaintext highlighter-rouge">-s</code> to squeeze repeated instances into a single translation <code class="language-plaintext highlighter-rouge">tr -s " " "\t" &lt; input.txt</code></p>
 
-<h2 id="tshark">tshark</h2>
+<h2 id="tshark">tshark<img src="/src/kali.ico" alt="" title="Kali Linux" /></h2>
 <p>Cmdline wireshark, wireshark filters are processed as cmdline arguments.<br />
-<strong>Only uses <a href="https://www.tcpdump.org/manpages/pcap-filter.7.html">capture filters</a> for capturing pcaps <code class="language-plaintext highlighter-rouge">-f</code>. Only uses display filters<sup>refs:<a href="https://www.wireshark.org/docs/man-pages/wireshark-filter.html">1, </a></sup><sup><a href="https://www.wireshark.org/docs/dfref/">2, </a></sup><sup><a href="https://tshark.dev/setup/">3</a></sup> for reading pcaps <code class="language-plaintext highlighter-rouge">-Y</code>.</strong></p>
+<strong>Only uses <a href="https://www.tcpdump.org/manpages/pcap-filter.7.html">capture filters</a> for capturing pcaps <code class="language-plaintext highlighter-rouge">-f</code>. Only uses display filters<sup>refs:<a href="https://www.wireshark.org/docs/man-pages/wireshark-filter.html">1, </a></sup><sup><a href="https://www.wireshark.org/docs/dfref/">2, </a></sup><sup>(3)(https://tshark.dev/setup/)</sup> for reading pcaps <code class="language-plaintext highlighter-rouge">-Y</code>.</strong></p>
 
 <p><code class="language-plaintext highlighter-rouge">-f</code> Capture packets with pcap-filters/tcpdump expressions.<br />
-<code class="language-plaintext highlighter-rouge">-Y</code> Apply <a href="https://www.wireshark.org/docs/dfref/">display filters</a><sup><a href="Used in converting tshark pdml to xml for viewing pcaps in web browsers.">1</a></sup>.<br />
-<code class="language-plaintext highlighter-rouge">-T</code> Specify different output formats like <code class="language-plaintext highlighter-rouge">json</code>, <code class="language-plaintext highlighter-rouge">text</code>, <code class="language-plaintext highlighter-rouge">fields</code><sup><a href="Used in converting tshark pdml to xml for viewing pcaps in web browsers.">1</a></sup>, etc.<br />
+<code class="language-plaintext highlighter-rouge">-Y</code> Apply <a href="https://www.wireshark.org/docs/dfref/">display filters</a><sup>(1)</sup>.<br />
+<code class="language-plaintext highlighter-rouge">-T</code> Specify different output formats like <code class="language-plaintext highlighter-rouge">json</code>, <code class="language-plaintext highlighter-rouge">text</code>, <code class="language-plaintext highlighter-rouge">fields</code><sup>(1)</sup>, etc.<br />
 <code class="language-plaintext highlighter-rouge">-D</code> Lists all available interfaces to listen for traffic.<br />
-<code class="language-plaintext highlighter-rouge">-V</code> Display all packet information verbosely. Use injunction with <code class="language-plaintext highlighter-rouge">-Y</code><sup><a href="With really big outputs, `sort` may not have enough space inside it's tmp directory to actually do sorting. Do `-T .` to specify the current directory to be used as temp space.">2</a></sup>.<br />
+<code class="language-plaintext highlighter-rouge">-V</code> Display all packet information verbosely. Use injunction with <code class="language-plaintext highlighter-rouge">-Y</code><sup>(2)</sup>.<br />
 <code class="language-plaintext highlighter-rouge">-n</code> Disable name resolution.<br />
-<code class="language-plaintext highlighter-rouge">-N</code> Name resolving options<sup><a href="Specify name resolution options, by default tshark already does `-N dmN`. However `-N dmn` is probably more useful when reading pcaps because it will get name resolution from the DNS packets inside the pcap instead of external resolution (`-N N`) does this.">4</a></sup>.<br />
+<code class="language-plaintext highlighter-rouge">-N</code> Name resolving options<sup>(4)</sup>.<br />
 <code class="language-plaintext highlighter-rouge">-q</code> Be more quiet, ideally use with <code class="language-plaintext highlighter-rouge">-z</code>.<br />
 <code class="language-plaintext highlighter-rouge">-x</code> Display hex &amp; ASCII dump.<br />
-<code class="language-plaintext highlighter-rouge">-E</code> Display options for headers when using <code class="language-plaintext highlighter-rouge">-T</code><sup>[3]</sup>.<br />
-<code class="language-plaintext highlighter-rouge">--export-objects</code> Export files in tshark, makes a separate directory.<sup>[5]</sup></p>
+<code class="language-plaintext highlighter-rouge">-E</code> Display options for headers when using <code class="language-plaintext highlighter-rouge">-T</code><sup>(3)</sup>.<br />
+<code class="language-plaintext highlighter-rouge">--export-objects</code> Export files in tshark, makes a separate directory.<sup>(5)</sup></p>
 
 <p>Advanced help:<br />
 <code class="language-plaintext highlighter-rouge">-G</code> Prints every wireshark filter. Use injunction with <code class="language-plaintext highlighter-rouge">egrep "\sPATTERN\." | less -Sx40</code>.<br />
@@ -449,12 +474,15 @@ If a text has inconsistent spaces, use <code class="language-plaintext highlight
 <code class="language-plaintext highlighter-rouge">-z</code> Protocol Hierarchy<br />
 <code class="language-plaintext highlighter-rouge">-z help | less</code> Display help</p>
 
+<p>(1a): <code class="language-plaintext highlighter-rouge">-Y</code>, <code class="language-plaintext highlighter-rouge">-T fields</code>, <code class="language-plaintext highlighter-rouge">-e</code> are the bread and butter, <code class="language-plaintext highlighter-rouge">-Y</code> finds packets based on the display filter. <code class="language-plaintext highlighter-rouge">-T fields</code> and <code class="language-plaintext highlighter-rouge">-e</code> modifies the output to specific fields. See (1b).<br />
+(4): Specify name resolution options, by default tshark already does <code class="language-plaintext highlighter-rouge">-N dmN</code>. However <code class="language-plaintext highlighter-rouge">-N dmn</code> is probably more useful when reading pcaps because it will get name resolution from the DNS packets inside the pcap instead of external resolution (<code class="language-plaintext highlighter-rouge">-N N</code>) does this.</p>
+
 <p><ins>Examples</ins>:<br />
-[1b]: Display only dns queries <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -Y "dns.flags.response == 0" -T fields -e dns.qry.name</code><br />
-[2a]: To display packet 100 verbosely <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -Y frame.number==100 -V</code><br />
-[2b]: To display a specific tcp stream versbosely <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -Y "tcp.stream eq 0" -V</code><br />
-[3]: Add header fields for custom columns <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -E header=y -T fields -e ip.src -e ip.dst -e ip.proto -c 5 | less -sX40</code><br />
-[5]: Export http files, exports it to a dir called files <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap --export-objects http,files</code></p>
+(1b): Display only dns queries <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -Y "dns.flags.response == 0" -T fields -e dns.qry.name</code><br />
+(2a): To display packet 100 verbosely <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -Y frame.number==100 -V</code><br />
+(2b): To display a specific tcp stream versbosely <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -Y "tcp.stream eq 0" -V</code><br />
+(3): Add header fields for custom columns <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -E header=y -T fields -e ip.src -e ip.dst -e ip.proto -c 5 | less -sX40</code><br />
+(5): Export http files, exports it to a dir called files <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap --export-objects http,files</code></p>
 
 <p>Filter for TCP SYN packets then show src and dst ip with dst ports of the connection then sort for most connections <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -Y tcp.flags==2 -T fields -e ip.src -e ip.dst -e tcp.dstport | sort | uniq -c | sort -n</code><br />
 Filter http content-length which is useful for seeing payload sizes <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -Y http -T fields -e frame.number -e http.content_length</code><br />
@@ -489,12 +517,12 @@ Use <code class="language-plaintext highlighter-rouge">vimtutor</code> for a com
 <code class="language-plaintext highlighter-rouge">w</code> jump to the next word, selecting its 1st char.<br />
 <code class="language-plaintext highlighter-rouge">e</code> until the end of the current word without selecting the next word.<br />
 <code class="language-plaintext highlighter-rouge">$</code> go to the end of the current line.<br />
-<code class="language-plaintext highlighter-rouge">2, 3, 4</code> Numbers specify repeats of the same motion<sup><a href="Used in converting tshark pdml to xml for viewing pcaps in web browsers.">1</a></sup>.</p>
+<code class="language-plaintext highlighter-rouge">2, 3, 4</code> Numbers specify repeats of the same motion<sup>(1)</sup>.</p>
 
 <p><ins>Examples</ins><br />
 <code class="language-plaintext highlighter-rouge">:help wq</code> To get help on a specific command, this one is for wq. This actually opens a 2nd instance of vi, so you use <code class="language-plaintext highlighter-rouge">:q</code> to get out of help.<br />
-<a href="Used in converting tshark pdml to xml for viewing pcaps in web browsers.">1</a>: <code class="language-plaintext highlighter-rouge">2w</code> Jump 2 words, <code class="language-plaintext highlighter-rouge">3$</code> Go to the end of current line + jump 2 lines.<br />
-<a href="With really big outputs, `sort` may not have enough space inside it's tmp directory to actually do sorting. Do `-T .` to specify the current directory to be used as temp space.">2</a>:</p>
+(1): <code class="language-plaintext highlighter-rouge">2w</code> Jump 2 words, <code class="language-plaintext highlighter-rouge">3$</code> Go to the end of current line + jump 2 lines.<br />
+(2):</p>
 
 <h2 id="ufw">ufw</h2>
 <p>Linux netfilter firewall. Installed by default on ubuntu.</p>
@@ -527,15 +555,28 @@ Filter ADJACENT matching lines and merges those repeating lines into 1. It’s n
 
 <h2 id="xmllint">xmllint</h2>
 
-<p>Check an xml file for format errors<sup><a href="https://laufeynumber1fan.github.io/tool-journal.html#tshark">[1]</a></sup> <code class="language-plaintext highlighter-rouge">xmllint foo.xml --noout</code></p>
+<p>Check an xml file for format errors<sup><a href="/tool-journal.html#tshark">(1)</a></sup> <code class="language-plaintext highlighter-rouge">xmllint foo.xml --noout</code></p>
 
-<p><a href="https://codecademy.com"><img src="/assets/images/codey.jpg" alt="" title="Kali Linux" /></a></p>
-<h2 id="xprobe2">xprobe2</h2>
+<p>(1): Used in converting tshark pdml to xml for viewing pcaps in web browsers.</p>
+
+<h2 id="xprobe2">xprobe2<img src="/src/kali.ico" alt="" title="Kali Linux" /></h2>
+<p>OS fingerprinting tool.<br />
+<code class="language-plaintext highlighter-rouge">xprobe &lt;target IP&gt;</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">-v</code> Verbose.<br />
+<code class="language-plaintext highlighter-rouge">-p &lt;proto:portnum:state&gt;</code> Specify protocol, port, and state to test OS.<sup>(1)</sup></p>
+
+<p>(1): For example <code class="language-plaintext highlighter-rouge">-p tcp:80:open</code> will have xprobe2 sending SYN ACKs to port 80. See man page.</p>
+
+<p>Practice tool in:<br />
+linuxzoo.net <a href="https://linuxzoo.net/page/lab_kali2024-4/wk04a.html#frm_13">4a</a></p>
 
 <h2 id="xsltproc">xsltproc</h2>
 
 <p>Apply an XSLT stylesheet to an XML to convert it to html <code class="language-plaintext highlighter-rouge">xsltproc foo.xsl foo.xml &gt; foo.html</code><br />
-Get the XLST stylesheet from wireshark and apply it to an XML<sup><a href="https://laufeynumber1fan.github.io/tool-journal.html#tshark">[1]</a></sup> <code class="language-plaintext highlighter-rouge">xsltproc /usr/share/wireshark/pdml2html.xsl foo.xml &gt; foo.html</code></p>
+Get the XLST stylesheet from wireshark and apply it to an XML<sup>(1)</sup> <code class="language-plaintext highlighter-rouge">xsltproc /usr/share/wireshark/pdml2html.xsl foo.xml &gt; foo.html</code></p>
+
+<p>(1): Used in converting tshark pdml to xml for viewing pcaps in web browsers.</p>
 
 <h2 id="xxd">xxd</h2>
 
@@ -547,7 +588,7 @@ Get the XLST stylesheet from wireshark and apply it to an XML<sup><a href="https
 Without format, get hex of “hello world” <code class="language-plaintext highlighter-rouge">echo -n "hello world" | xxd -p</code></p>
 
 <h2 id="zeek">zeek</h2>
-<p><a href="https://laufeynumber1fan.github.io/addendums.html#installing-zeek">How to install</a></p>
+<p><a href="/addendums.html#installing-zeek">How to install</a></p>
 
       </div>
     </main><footer class="site-footer h-card">
