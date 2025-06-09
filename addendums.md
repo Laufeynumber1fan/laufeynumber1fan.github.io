@@ -3,6 +3,7 @@ layout: default
 Title: Addendums
 nav_include: yes
 ---
+
 <style>
   .page-content > .wrapper {
   width: 50%;

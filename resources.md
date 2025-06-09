@@ -3,6 +3,7 @@ layout: default
 title: Resources
 nav_include: yes
 ---
+
 <style>
   .page-content > .wrapper {
   width: 50%;
