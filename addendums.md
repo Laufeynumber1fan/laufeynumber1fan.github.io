@@ -1,7 +1,6 @@
 ---
 layout: default
 Title: Addendums
-nav_include: yes
 ---
 
 <style>
@@ -188,3 +187,24 @@ You can create a simple backdoor with [ncat](https://laufeynumber1fan.github.io/
 That is why the older `nc` tool still has port scanning features albeit less developed than nmap.  
 
 `nc -zv [HOST] [1-9999]`  
+
+## Basic nmap scripting
+3 basic steps:
+
+1. Search for a script to use in nmap's `script.db`  
+`cat /usr/share/nmap/scripts/script.db | grep dns`  
+
+2. Get info on the script.  
+`nmap --script-help dns-zone-transfer`  
+
+3. Run it.  
+`nmap <options> <target> --script dns-zone-transfer`  
+
+To use all non-invasive nmap scripts, use `-sC`.
+
+## less not working
+If `less` is not showing anything and the whole screen is just `~` then that means the piped command may have outputted to `stderr` and not `stdout`.  
+
+For example, the command `tshark -z help` displays the help command for `-z` but the help info is considered an error message. When you pipe this command to `less` nothing gets displayed. 
+Do `2>&1` to change the console `std` to `out` and not `err`.  
+`tshark -z help 2>&1 | less`

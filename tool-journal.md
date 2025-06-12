@@ -1,12 +1,11 @@
 ---
 layout: default
 title: Tools
-nav_include: yes
 ---
 
 <style>
   .page-content > .wrapper {
-  width: 50%;
+  width: 60%;
   max-width: none;
   overflow:visible;
   }
@@ -18,6 +17,10 @@ nav_include: yes
 
   #shrimple {
     max-width: 80%;
+  }
+
+  .highlight > code, .highlight {
+    text-wrap: auto;
   }
 </style>  
 ![](/src/shrimple.png){:#shrimple}
@@ -103,24 +106,26 @@ TODO
 The successor to apt-key, gpg is a keyring manager, prominently used in apt for signing packages and preventing malicious repos from installing packages. Kinda like TLS in a way.
 
 `--no-default-keyring` Very necessary command that prevents a new keyring into becoming a default keyring. Linux distros already have a configured default keyring so adding one is gonna add a vulnerability.
-`--keyring file` Add the file to the list of keyrings<sup>(1)</sup>
-
+`--keyring file` Add the file to the list of keyrings<sup>(1)</sup>  
 
 Note: Move/store keyrings (.gpg) files in `/usr/share/keyrings/`
 
-Example:
-Initialise a new keyring from kali
-Get the keyring with [curl](/tool-journal.html#curl), save it to the correct dir  
-`sudo curl https://archive.kali.org/archive-keyring.gpg -o /usr/share/keyrings/kali-archive-keyring.gpg`  
-Intialise it with gpg  
-`gpg --no-default-keyring --keyring /usr/share/keyrings/kali-archive-keyring.gpg -k /usr/share/keyrings/kali-archive-keyring.gpg`
+<u>Examples</u>  
+```
+# Initialise a new keyring from kali
+# Get the keyring with curl, save it to the correct dir
+sudo curl https://archive.kali.org/archive-keyring.gpg -o /usr/share/keyrings/kali-archive-keyring.gpg
 
-Stackoverflow help: [What commands exactly should replace the deprecated apt-key?](https://askubuntu.com/questions/1286545/what-commands-exactly-should-replace-the-deprecated-apt-key/1307181#1307181)  
+# Intialise it with gpg
+gpg --no-default-keyring --keyring /usr/share/keyrings/kali-archive-keyring.gpg -k /usr/share/keyrings/kali-archive-keyring.gpg
+```
+
+[What commands exactly should replace the deprecated apt-key?](https://askubuntu.com/questions/1286545/what-commands-exactly-should-replace-the-deprecated-apt-key/1307181#1307181)  
 
 ## grep
 TODO
 
-(1): [Where GREP came from](https://www.youtube.com/watch?v=NTfOnGZUZDk)  
+[Where GREP came from](https://www.youtube.com/watch?v=NTfOnGZUZDk)  
 
 ## gunzip
 Unzip `.gz` files, but if you want to unzip `.tar.gz`, use `tar`.
@@ -170,14 +175,8 @@ How to search: `/PATTERN` and then press `n` to iterate from next or `Shift + n 
 `b` Backward one window  
 `d` Forward one half-window  
 `u` Backward one half-window  
-  
-TROUBLESHOOTING  
-  
-Screen full of `~` and (END):  
-If `less` is not showing anything and the whole screen is just `~` then that means the piped command may have outputted to `stderr` and not `stdout`.  
-For example, the command `tshark -z help` displays the help command for `-z` but the help info is considered an error message. When you pipe this command to `less` nothing gets displayed. 
-Do `2>&1` to change the console `std` to `out` and not `err`.  
-`tshark -z help 2>&1 | less`
+
+[less not working](/addendums.html#less-not-working)
 
 ## ls
 List files in directory.
@@ -187,12 +186,11 @@ List
 `-A` Same as `-a` but without . and .. dirs.  
 `-1` List filenames one by one but don't add additional info.  
 `-R` List subdirs recursively.  
-  
+
 Sort  
 `-r` Reverse sort.  
 `-t` Time sort  
 
-  
 Size  
 `-S` Sort by file size.  
 `-s` Include size of each file but not human readable.  
@@ -234,15 +232,17 @@ still TODO
 
 `-c 'foo'` Execute something upon connection.  
 `-k` Keep-open connection upon doing something. Also allow multiple connections.  
-`-z` does nothing.<sup>(1)</sup>
+`-z` does nothing.<sup>(1)</sup>  
 `-v` Verbose.  
 
-Example:  
-Make port 8000 to listen for `ncat` connections:  
-`ncat -l localhost 8000`  
+<u>Examples</u>  
+```
+# Make port 8000 to listen for ncat connections
+ncat -l localhost 8000 
 
-On a different shell, connect to port 8000:  
-`ncat 8000`
+# On a different shell, connect to port 8000
+ncat 8000
+```
 
 Further reading:  
 [Simple backdoor with ncat](/addendums.html#simple-backdoor-with-ncat)  
@@ -253,17 +253,26 @@ linuxzoo.net [1c](https://linuxzoo.net/page/lab_kali2024-4/wk01c.html#frm_15) an
 
 ## nmap![](/src/kali.ico 'Kali Linux')
 TODO
-Port scanner. Has its own scripting engine.<sup>(1)</sup>
+Port scanner. Has its own scripting engine.<sup>(1)</sup> There are literally way too many options and usages for nmap, read the man page.
 
-`-p` Scan one or a range of ports or all ports. Ex. `-p 1-1000`,  for all ports `-p-`  
-`sn` No port scanning.  
+`-p` Specify port. `-p 1-1000`, or `-p U:137-139,T:137-139`, or all ports `-p-`.  
+`-sn` No port scanning.  
+`-Pn` No host discovery.  
 `-n` No name resolution.  
 `-O` OS fingerprinting.  
 `-A` Aggressive scan (shorthand for `-sVsCO`).  
+  
+Options that start with `-s` is a scan technique, for example:  
+`-sS` TCP SYN.  
+`-sU` UDP.  
 
-(1): `nmap` has a .db file that contains info on built-in scripts. `/usr/share/nmap/scripts/script.db`
+(1): `nmap` has a .db file that contains info on built-in scripts. `/usr/share/nmap/scripts/script.db`  
 
-Practice tool in:
+Further reading:  
+(1): [Nmap Scripting Engine](https://nmap.org/book/nse-usage.html)  
+(1): [Basic nmap scripting](/addendums.md#basic-nmap-scripting)  
+
+Practice tool in:  
 linuxzoo.net (intro to scripting) [4a](linuxzoo.net/page/lab_kali2024-4/wk04a.html#frm_19)  
 
 ## openssl
@@ -290,25 +299,32 @@ TODO
 ## rm
 Remove files, directories, etc...  
 
-`-d` Delete empty dirs.
-`-f` Force file deletion, no confirmation or logging
-`-i` Prompt yes/no for every file  
-`-I` Prompt yes/no for every 3 files  
-`-r` Recursively delete files in dir and then delete the dir itself (you can also remove folders with [rmdir](/tool-journal.html#rmdir)) 
-`-v` Verbose  
+`-d` Delete empty dirs.  
+`-f` Force file deletion, no confirmation or logging.  
+`-i` Prompt yes/no for every file.  
+`-I` Prompt yes/no for every 3 files.  
+`-r` Recursively delete files in dir and then delete the dir itself (you can also remove folders with [rmdir](/tool-journal.html#rmdir)).  
+`-v` Verbose.  
 
-**<u>Examples</u>**  
-`rm foo.txt` Delete file  
-`rm ../foo.txt` Delete file in parent directory  
-`rm -fvr foobar` Force delete everything inside foobar  
+<u>Examples</u>  
+```
+# Delete file
+rm foo.txt
+
+# Delete file in parent directory
+rm ../foo.txt
+
+# Force delete everything inside foobar
+rm -fvr foobar
+```
 
 ## rmdir
 TODO
-Remove folder(s)
+Remove folder(s).  
   
 ## route
 TODO
-Show and change routing table
+Show and change routing table.  
 
 ## sed
 TODO
@@ -353,7 +369,7 @@ Dump **s**ocket **s**tatistics. Use as superuser to reveal process information.
 `-e` Show extended info.  
 `-n` Don't resolve names. Port numbers and IP addresses only.  
 
-Examples:  
+<u>Examples</u>  
 `ss`  
 `sudo ss -tua | grep 'http'`  
 `sudo ss -tuaen`  
@@ -362,32 +378,32 @@ Examples:
 OpenSSH client.  
 `ssh user@host`<sup>(1)</sup>  
 
-`-p` Specify a port (default is 22).
-`-l` Specify a user (2nd method).
-`-i` Specify an identity file, a .key file that contains a SSH private key.
+`-p` Specify a port (default is 22).  
+`-l` Specify a user (2nd method).  
+`-i` Specify an identity file, a .key file that contains a SSH private key.  
 
 (1): [Execute a command with ssh](/addendums.html#executing-a-command-on-a-remote-machine-using-SSH-without-getting-a-shell)
 
 ## stty
 Funny terminal settings commands
 
-For example do `stty -icrnl` to disable the ENTER button to translate to a newline in terminal. `stty icrnl` to reenable. Read the man pages.
+For example do `stty -icrnl` to disable the ENTER button to translate to a newline in terminal.  `stty icrnl` to reenable. Read the man pages.  
 
 ## swapon  
-Adds a swap partitions to `/etc/fstab` to mount it.
+Adds a swap partitions to `/etc/fstab` to mount it.  
 
-`--show` Print swap partitions
+`--show` Print swap partitions.  
 
 ## tar
 Archive tool that compresses or decompresses folders. Makes tarballs.  
   
-`-c` Create tar archive  
+`-c` Create tar archive.  
 `-z` Apply gunzip while compressing or decompressing. Use for `.gz` extensions  
-`-v` Verbose  
-`-f` File/Folder name  
-`-x` Decompress archives  
+`-v` Verbose.  
+`-f` File/Folder name.  
+`-x` Decompress archives.  
   
-Examples:
+<u>Examples</u>  
 Make tar.gz `tar -czvf [tar.gz name] [folder/file you want to tar]`  
 Extract tar.gz `tar -xzvf foo.tar.gz`  
 
@@ -402,32 +418,52 @@ Cmdline pcap analyser, similar to tshark but lightweight. Has simpler filters.
 `--time-stamp-precision` With `-tt` set decimal places.<sup>(1)</sup>  
 `-n` Don't convert IPs to hostnames.  
 `-X` Print ASCII and hex of payloads. 
-`-e` Print link level/ethernet packet header.
+`-e` Print link level/ethernet packet header. 
 `-w` Make pcap from packets captured by filter.  
 
-Only DNS packets `tcpdump -r foo.pcap port 53`  
-Exclude outgoing (dst) DNS connections `tcpdump -r foo.pcap not dst port 53`  
-Combination of filters `tcpdump -r foo.pcap not port 53 and not port 22`
-Specific source IP `tcpdump -r foo.pcap src 192.168.0.1`
-Combination of filter and args `tcpdump -r foo.pcap -ttttnXc 5 port 80`
+```
+# Only DNS packets
+tcpdump -r foo.pcap port 53
+
+# Exclude outgoing (dst) DNS connections
+tcpdump -r foo.pcap not dst port 53
+
+# Combination of filters
+tcpdump -r foo.pcap not port 53 and not port 22
+
+# Specific source IP
+tcpdump -r foo.pcap src 192.168.0.1
+
+# Combination of filter and args
+tcpdump -r foo.pcap -ttttnXc 5 port 80
+```
 
 Further reading:  
 [Digest big pcaps](/addendums.html#digest-big-pcaps)  
-
   
 ## tr  
 Translate, replace, delete characters. Applies translations line by line.
 
-Replace tabs into new lines `cat conn.log | zeek-cut id.orig_h id.resp_h | tr '\t' '\n' | sort | uniq | wc -l`  
-Lowercase to uppercase `echo "hello world" | tr 'a-z' 'A-Z'`  
-Reverse pipe `tr " " "\t" < input.txt`  
-If a text has inconsistent spaces, use `-s` to squeeze repeated instances into a single translation `tr -s " " "\t" < input.txt`
+```
+# Replace tabs into new lines
+cat conn.log | zeek-cut id.orig_h id.resp_h | tr '\t' '\n' | sort | uniq | wc -l
+
+# Lowercase to uppercase
+echo "hello world" | tr 'a-z' 'A-Z'
+
+# Reverse pipe
+tr " " "\t" < input.txt
+
+# If a text has inconsistent spaces, use `-s` to squeeze repeated instances into a single translation
+tr -s " " "\t" < input.txt
+```
 
 ## tshark![](/src/kali.ico 'Kali Linux')
 Cmdline wireshark, wireshark filters are processed as cmdline arguments.  
-**Only uses [capture filters](https://www.tcpdump.org/manpages/pcap-filter.7.html) for capturing pcaps `-f`. Only uses display filters<sup>refs:[1, ](https://www.wireshark.org/docs/man-pages/wireshark-filter.html)</sup><sup>[2, ](https://www.wireshark.org/docs/dfref/)</sup><sup>(3)(https://tshark.dev/setup/)</sup> for reading pcaps `-Y`.**
+**Uses [capture filters](https://www.tcpdump.org/manpages/pcap-filter.7.html) for capturing pcaps `-f`. See `man pcap-filters`**  
+**Uses display filters<sup>[a, ](https://www.wireshark.org/docs/man-pages/wireshark-filter.html)</sup><sup>[b, ](https://www.wireshark.org/docs/dfref/)</sup><sup>[c](https://tshark.dev/setup/)</sup> for reading pcaps `-Y`. See `man wireshark-filters`** 
   
-`-f` Capture packets with pcap-filters/tcpdump expressions.  
+`-f` Capture packets with tcpdump expressions.  
 `-Y` Apply [display filters](https://www.wireshark.org/docs/dfref/)<sup>(1)</sup>.  
 `-T` Specify different output formats like `json`, `text`, `fields`<sup>(1)</sup>, etc.  
 `-D` Lists all available interfaces to listen for traffic.  
@@ -448,21 +484,47 @@ Statistics:
 `-z` Protocol Hierarchy  
 `-z help | less` Display help  
 
-(1a): `-Y`, `-T fields`, `-e` are the bread and butter, `-Y` finds packets based on the display filter. `-T fields` and `-e` modifies the output to specific fields. See (1b).  
+(1a): `-Y`, `-T fields`, `-e` are the bread and butter, `-Y` finds packets based on the display filter. `-T fields` and `-e` modifies the output to specific fields. See example (1b).  
 (4): Specify name resolution options, by default tshark already does `-N dmN`. However `-N dmn` is probably more useful when reading pcaps because it will get name resolution from the DNS packets inside the pcap instead of external resolution (`-N N`) does this.  
 
 <ins>Examples</ins>:  
-(1b): Display only dns queries `tshark -r foo.pcap -Y "dns.flags.response == 0" -T fields -e dns.qry.name`  
-(2a): To display packet 100 verbosely `tshark -r foo.pcap -Y frame.number==100 -V`  
-(2b): To display a specific tcp stream versbosely `tshark -r foo.pcap -Y "tcp.stream eq 0" -V`  
-(3): Add header fields for custom columns `tshark -r foo.pcap -E header=y -T fields -e ip.src -e ip.dst -e ip.proto -c 5 | less -sX40`  
-(5): Export http files, exports it to a dir called files `tshark -r foo.pcap --export-objects http,files`  
+```
+# 1b Display only dns queries  
+tshark -r foo.pcap -Y "dns.flags.response == 0" -T fields -e dns.qry.name
 
-Filter for TCP SYN packets then show src and dst ip with dst ports of the connection then sort for most connections `tshark -r foo.pcap -Y tcp.flags==2 -T fields -e ip.src -e ip.dst -e tcp.dstport | sort | uniq -c | sort -n`  
-Filter http content-length which is useful for seeing payload sizes `tshark -r foo.pcap -Y http -T fields -e frame.number -e http.content_length`  
-View filter documentation in terminal `tshark -G | egrep '\sip\.' | less -S -x40`  
-Find tcp stream number of tcp data payloads `tshark -r foo.pcap -Y tcp.completeness==7 -T fields -e http.request.uri -e tcp.stream | less`
-Follow tcp stream 0 data payload `tshark -r foo.pcap -qz follow,tcp,ascii,0`  
+# 2a To display packet 100 verbosely
+tshark -r foo.pcap -Y frame.number==100 -V
+
+# 2b To display a specific tcp stream versbosely
+tshark -r foo.pcap -Y "tcp.stream eq 0" -V
+
+# 3 Add header fields for custom columns
+tshark -r foo.pcap -E header=y -T fields -e ip.src -e ip.dst -e ip.proto -c 5 | less -sX40
+
+# 5 Export http files, exports it to a dir called files
+tshark -r foo.pcap --export-objects http,files 
+```
+```
+# Filter for TCP SYN packets then show src and dst ip with dst ports of the connection then sort for most connections
+tshark -r foo.pcap -Y tcp.flags==2 -T fields -e ip.src -e ip.dst -e tcp.dstport | sort | uniq -c | sort -n
+
+# Filter http content-length which is useful for seeing payload sizes
+tshark -r foo.pcap -Y http -T fields -e frame.number -e http.content_length
+
+# View filter documentation in terminal
+tshark -G | egrep '\sip\.' | less -S -x40
+
+# Find tcp stream number of tcp data payloads
+tshark -r foo.pcap -Y tcp.completeness==7 -T fields -e http.request.uri -e tcp.stream | less
+
+# Follow tcp stream 0 data payload
+tshark -r foo.pcap -qz follow,tcp,ascii,0
+``` 
+
+Practice tool in:  
+[TryHackMe free tshark room](https://tryhackme.com/room/tshark)  
+[labex.io lab but ai-powered](https://labex.io/skilltrees/wireshark)  
+[malware-traffic-analysis.net Excercises](https://malware-traffic-analysis.net/training-exercises.html)  
 
 ## vi
 Antediluvian text editor, installed by default basically everywhere. Very interesting history lesson by itself.  
@@ -472,6 +534,7 @@ Use `vimtutor` for a complete crash course.
 `:q` Quit.  
 `:q!` Force quit.  
 `:wq` Write and quit.  
+`:help <command>` Get help on a specific command.  
 `y` Copy text (yank).  
 `p` Paste text.  
 `ESC` Go to command mode.  
@@ -493,10 +556,7 @@ MOTIONS - moves the cursor but can be combined with commands.
 `$` go to the end of the current line.  
 `2, 3, 4` Numbers specify repeats of the same motion<sup>(1)</sup>. 
 
-<ins>Examples</ins>  
-`:help wq` To get help on a specific command, this one is for wq. This actually opens a 2nd instance of vi, so you use `:q` to get out of help.  
 (1): `2w` Jump 2 words, `3$` Go to the end of current line + jump 2 lines.  
-(2):
 
 ## ufw  
 Linux netfilter firewall. Installed by default on ubuntu.  
@@ -562,4 +622,5 @@ Get hex of "hello world" `echo -n "hello world" | xxd`
 Without format, get hex of "hello world" `echo -n "hello world" | xxd -p`
 
 ## zeek
+
 [How to install](/addendums.html#installing-zeek)  

@@ -136,3 +136,5 @@ nav_include: yes
 [AWK tutorial](https://learnbyexample.github.io/learn_gnuawk/awk-introduction.html)  
 [Linux cmdline practice](https://overthewire.org/wargames/)  
 [CVE lookup for vulnerability scanners](https://www.tenable.com/cve/search?q=4.7p1)  
+[Online OpenVAS/Greenbone client](https://secinfo.greenbone.net)  
+[labex.io labs](https://labex.io/learn)  

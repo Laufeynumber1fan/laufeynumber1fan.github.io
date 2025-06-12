@@ -1,9 +1,10 @@
+author:
+    name: laufeynumber1fan
+
 theme: minima
 minima:
   skin: auto
-  nav_pages:
-    - addendums.md
-    - tool-journal.md
-    - resources.md
-author:
-    name: laufeynumber1fan
+  social_links:
+    - title: 
+      icon: github
+      url: "https://github.com/Laufeynumber1fan"

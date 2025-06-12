@@ -6,6 +6,7 @@
 <title>Tools</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Tools" />
+<meta name="author" content="laufeynumber1fan" />
 <meta property="og:locale" content="en_US" />
 <link rel="canonical" href="http://localhost:4000/tool-journal.html" />
 <meta property="og:url" content="http://localhost:4000/tool-journal.html" />
@@ -13,7 +14,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Tools" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"Tools","url":"http://localhost:4000/tool-journal.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"laufeynumber1fan"},"headline":"Tools","url":"http://localhost:4000/tool-journal.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" /></head>
 <body><header class="site-header" role="banner">
@@ -28,14 +29,14 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/tool-journal.html">Tools</a><a class="page-link" href="/resources.html">Resources</a></div>
+        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/resources.html">Resources</a><a class="page-link" href="/tool-journal.html">Tools</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <style>
   .page-content > .wrapper {
-  width: 50%;
+  width: 60%;
   max-width: none;
   overflow:visible;
   }
@@ -48,10 +49,13 @@
   #shrimple {
     max-width: 80%;
   }
+
+  .highlight > code, .highlight {
+    text-wrap: auto;
+  }
 </style>
 
-<p>The industrial revolution and its consenquences<br />
-<img src="/src/shrimple.png" alt="" id="shrimple" /></p>
+<p><img src="/src/shrimple.png" alt="" id="shrimple" /></p>
 <h2 id="alias">alias</h2>
 <p>TODO
 Set aliases for commands <ins>temporarily</ins>.</p>
@@ -137,19 +141,21 @@ DNS lookup utility.</p>
 
 <p>Note: Move/store keyrings (.gpg) files in <code class="language-plaintext highlighter-rouge">/usr/share/keyrings/</code></p>
 
-<p>Example:
-Initialise a new keyring from kali
-Get the keyring with <a href="/tool-journal.html#curl">curl</a>, save it to the correct dir<br />
-<code class="language-plaintext highlighter-rouge">sudo curl https://archive.kali.org/archive-keyring.gpg -o /usr/share/keyrings/kali-archive-keyring.gpg</code><br />
-Intialise it with gpg<br />
-<code class="language-plaintext highlighter-rouge">gpg --no-default-keyring --keyring /usr/share/keyrings/kali-archive-keyring.gpg -k /usr/share/keyrings/kali-archive-keyring.gpg</code></p>
+<p><u>Examples</u></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Initialise a new keyring from kali
+# Get the keyring with curl, save it to the correct dir
+sudo curl https://archive.kali.org/archive-keyring.gpg -o /usr/share/keyrings/kali-archive-keyring.gpg
 
-<p>Stackoverflow help: <a href="https://askubuntu.com/questions/1286545/what-commands-exactly-should-replace-the-deprecated-apt-key/1307181#1307181">What commands exactly should replace the deprecated apt-key?</a></p>
+# Intialise it with gpg
+gpg --no-default-keyring --keyring /usr/share/keyrings/kali-archive-keyring.gpg -k /usr/share/keyrings/kali-archive-keyring.gpg
+</code></pre></div></div>
+
+<p><a href="https://askubuntu.com/questions/1286545/what-commands-exactly-should-replace-the-deprecated-apt-key/1307181#1307181">What commands exactly should replace the deprecated apt-key?</a></p>
 
 <h2 id="grep">grep</h2>
 <p>TODO</p>
 
-<p>(1): <a href="https://www.youtube.com/watch?v=NTfOnGZUZDk">Where GREP came from</a></p>
+<p><a href="https://www.youtube.com/watch?v=NTfOnGZUZDk">Where GREP came from</a></p>
 
 <h2 id="gunzip">gunzip</h2>
 <p>Unzip <code class="language-plaintext highlighter-rouge">.gz</code> files, but if you want to unzip <code class="language-plaintext highlighter-rouge">.tar.gz</code>, use <code class="language-plaintext highlighter-rouge">tar</code>.
@@ -200,13 +206,7 @@ How to search: <code class="language-plaintext highlighter-rouge">/PATTERN</code
 <code class="language-plaintext highlighter-rouge">d</code> Forward one half-window<br />
 <code class="language-plaintext highlighter-rouge">u</code> Backward one half-window</p>
 
-<p>TROUBLESHOOTING</p>
-
-<p>Screen full of <code class="language-plaintext highlighter-rouge">~</code> and (END):<br />
-If <code class="language-plaintext highlighter-rouge">less</code> is not showing anything and the whole screen is just <code class="language-plaintext highlighter-rouge">~</code> then that means the piped command may have outputted to <code class="language-plaintext highlighter-rouge">stderr</code> and not <code class="language-plaintext highlighter-rouge">stdout</code>.<br />
-For example, the command <code class="language-plaintext highlighter-rouge">tshark -z help</code> displays the help command for <code class="language-plaintext highlighter-rouge">-z</code> but the help info is considered an error message. When you pipe this command to <code class="language-plaintext highlighter-rouge">less</code> nothing gets displayed. 
-Do <code class="language-plaintext highlighter-rouge">2&gt;&amp;1</code> to change the console <code class="language-plaintext highlighter-rouge">std</code> to <code class="language-plaintext highlighter-rouge">out</code> and not <code class="language-plaintext highlighter-rouge">err</code>.<br />
-<code class="language-plaintext highlighter-rouge">tshark -z help 2&gt;&amp;1 | less</code></p>
+<p><a href="/addendums.html#less-not-working">less not working</a></p>
 
 <h2 id="ls">ls</h2>
 <p>List files in directory.</p>
@@ -262,15 +262,16 @@ Netcat. Multi-tool for anything TCP/UDP/IP. Legacy tool succeeded by <a href="/t
 
 <p><code class="language-plaintext highlighter-rouge">-c 'foo'</code> Execute something upon connection.<br />
 <code class="language-plaintext highlighter-rouge">-k</code> Keep-open connection upon doing something. Also allow multiple connections.<br />
-<code class="language-plaintext highlighter-rouge">-z</code> does nothing.<sup>(1)</sup>
+<code class="language-plaintext highlighter-rouge">-z</code> does nothing.<sup>(1)</sup><br />
 <code class="language-plaintext highlighter-rouge">-v</code> Verbose.</p>
 
-<p>Example:<br />
-Make port 8000 to listen for <code class="language-plaintext highlighter-rouge">ncat</code> connections:<br />
-<code class="language-plaintext highlighter-rouge">ncat -l localhost 8000</code></p>
+<p><u>Examples</u></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Make port 8000 to listen for ncat connections
+ncat -l localhost 8000 
 
-<p>On a different shell, connect to port 8000:<br />
-<code class="language-plaintext highlighter-rouge">ncat 8000</code></p>
+# On a different shell, connect to port 8000
+ncat 8000
+</code></pre></div></div>
 
 <p>Further reading:<br />
 <a href="/addendums.html#simple-backdoor-with-ncat">Simple backdoor with ncat</a><br />
@@ -281,17 +282,26 @@ linuxzoo.net <a href="https://linuxzoo.net/page/lab_kali2024-4/wk01c.html#frm_15
 
 <h2 id="nmap">nmap<img src="/src/kali.ico" alt="" title="Kali Linux" /></h2>
 <p>TODO
-Port scanner. Has its own scripting engine.<sup>(1)</sup></p>
+Port scanner. Has its own scripting engine.<sup>(1)</sup> There are literally way too many options and usages for nmap, read the man page.</p>
 
-<p><code class="language-plaintext highlighter-rouge">-p</code> Scan one or a range of ports or all ports. Ex. <code class="language-plaintext highlighter-rouge">-p 1-1000</code>,  for all ports <code class="language-plaintext highlighter-rouge">-p-</code><br />
-<code class="language-plaintext highlighter-rouge">sn</code> No port scanning.<br />
+<p><code class="language-plaintext highlighter-rouge">-p</code> Specify port. <code class="language-plaintext highlighter-rouge">-p 1-1000</code>, or <code class="language-plaintext highlighter-rouge">-p U:137-139,T:137-139</code>, or all ports <code class="language-plaintext highlighter-rouge">-p-</code>.<br />
+<code class="language-plaintext highlighter-rouge">-sn</code> No port scanning.<br />
+<code class="language-plaintext highlighter-rouge">-Pn</code> No host discovery.<br />
 <code class="language-plaintext highlighter-rouge">-n</code> No name resolution.<br />
 <code class="language-plaintext highlighter-rouge">-O</code> OS fingerprinting.<br />
 <code class="language-plaintext highlighter-rouge">-A</code> Aggressive scan (shorthand for <code class="language-plaintext highlighter-rouge">-sVsCO</code>).</p>
 
+<p>Options that start with <code class="language-plaintext highlighter-rouge">-s</code> is a scan technique, for example:<br />
+<code class="language-plaintext highlighter-rouge">-sS</code> TCP SYN.<br />
+<code class="language-plaintext highlighter-rouge">-sU</code> UDP.</p>
+
 <p>(1): <code class="language-plaintext highlighter-rouge">nmap</code> has a .db file that contains info on built-in scripts. <code class="language-plaintext highlighter-rouge">/usr/share/nmap/scripts/script.db</code></p>
 
-<p>Practice tool in:
+<p>Further reading:<br />
+(1): <a href="https://nmap.org/book/nse-usage.html">Nmap Scripting Engine</a><br />
+(1): <a href="/addendums.md#basic-nmap-scripting">Basic nmap scripting</a></p>
+
+<p>Practice tool in:<br />
 linuxzoo.net (intro to scripting) <a href="linuxzoo.net/page/lab_kali2024-4/wk04a.html#frm_19">4a</a></p>
 
 <h2 id="openssl">openssl</h2>
@@ -318,25 +328,31 @@ Package manager for ArchLinux distros.</p>
 <h2 id="rm">rm</h2>
 <p>Remove files, directories, etc…</p>
 
-<p><code class="language-plaintext highlighter-rouge">-d</code> Delete empty dirs.
-<code class="language-plaintext highlighter-rouge">-f</code> Force file deletion, no confirmation or logging
-<code class="language-plaintext highlighter-rouge">-i</code> Prompt yes/no for every file<br />
-<code class="language-plaintext highlighter-rouge">-I</code> Prompt yes/no for every 3 files<br />
-<code class="language-plaintext highlighter-rouge">-r</code> Recursively delete files in dir and then delete the dir itself (you can also remove folders with <a href="/tool-journal.html#rmdir">rmdir</a>) 
-<code class="language-plaintext highlighter-rouge">-v</code> Verbose</p>
+<p><code class="language-plaintext highlighter-rouge">-d</code> Delete empty dirs.<br />
+<code class="language-plaintext highlighter-rouge">-f</code> Force file deletion, no confirmation or logging.<br />
+<code class="language-plaintext highlighter-rouge">-i</code> Prompt yes/no for every file.<br />
+<code class="language-plaintext highlighter-rouge">-I</code> Prompt yes/no for every 3 files.<br />
+<code class="language-plaintext highlighter-rouge">-r</code> Recursively delete files in dir and then delete the dir itself (you can also remove folders with <a href="/tool-journal.html#rmdir">rmdir</a>).<br />
+<code class="language-plaintext highlighter-rouge">-v</code> Verbose.</p>
 
-<p><strong><u>Examples</u></strong><br />
-<code class="language-plaintext highlighter-rouge">rm foo.txt</code> Delete file<br />
-<code class="language-plaintext highlighter-rouge">rm ../foo.txt</code> Delete file in parent directory<br />
-<code class="language-plaintext highlighter-rouge">rm -fvr foobar</code> Force delete everything inside foobar</p>
+<p><u>Examples</u></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Delete file
+rm foo.txt
+
+# Delete file in parent directory
+rm ../foo.txt
+
+# Force delete everything inside foobar
+rm -fvr foobar
+</code></pre></div></div>
 
 <h2 id="rmdir">rmdir</h2>
 <p>TODO
-Remove folder(s)</p>
+Remove folder(s).</p>
 
 <h2 id="route">route</h2>
 <p>TODO
-Show and change routing table</p>
+Show and change routing table.</p>
 
 <h2 id="sed">sed</h2>
 <p>TODO</p>
@@ -380,7 +396,7 @@ Get hash of files in the current directory <code class="language-plaintext highl
 <code class="language-plaintext highlighter-rouge">-e</code> Show extended info.<br />
 <code class="language-plaintext highlighter-rouge">-n</code> Don’t resolve names. Port numbers and IP addresses only.</p>
 
-<p>Examples:<br />
+<p><u>Examples</u><br />
 <code class="language-plaintext highlighter-rouge">ss</code><br />
 <code class="language-plaintext highlighter-rouge">sudo ss -tua | grep 'http'</code><br />
 <code class="language-plaintext highlighter-rouge">sudo ss -tuaen</code></p>
@@ -389,8 +405,8 @@ Get hash of files in the current directory <code class="language-plaintext highl
 <p>OpenSSH client.<br />
 <code class="language-plaintext highlighter-rouge">ssh user@host</code><sup>(1)</sup></p>
 
-<p><code class="language-plaintext highlighter-rouge">-p</code> Specify a port (default is 22).
-<code class="language-plaintext highlighter-rouge">-l</code> Specify a user (2nd method).
+<p><code class="language-plaintext highlighter-rouge">-p</code> Specify a port (default is 22).<br />
+<code class="language-plaintext highlighter-rouge">-l</code> Specify a user (2nd method).<br />
 <code class="language-plaintext highlighter-rouge">-i</code> Specify an identity file, a .key file that contains a SSH private key.</p>
 
 <p>(1): <a href="/addendums.html#executing-a-command-on-a-remote-machine-using-SSH-without-getting-a-shell">Execute a command with ssh</a></p>
@@ -398,23 +414,23 @@ Get hash of files in the current directory <code class="language-plaintext highl
 <h2 id="stty">stty</h2>
 <p>Funny terminal settings commands</p>
 
-<p>For example do <code class="language-plaintext highlighter-rouge">stty -icrnl</code> to disable the ENTER button to translate to a newline in terminal. <code class="language-plaintext highlighter-rouge">stty icrnl</code> to reenable. Read the man pages.</p>
+<p>For example do <code class="language-plaintext highlighter-rouge">stty -icrnl</code> to disable the ENTER button to translate to a newline in terminal.  <code class="language-plaintext highlighter-rouge">stty icrnl</code> to reenable. Read the man pages.</p>
 
 <h2 id="swapon">swapon</h2>
 <p>Adds a swap partitions to <code class="language-plaintext highlighter-rouge">/etc/fstab</code> to mount it.</p>
 
-<p><code class="language-plaintext highlighter-rouge">--show</code> Print swap partitions</p>
+<p><code class="language-plaintext highlighter-rouge">--show</code> Print swap partitions.</p>
 
 <h2 id="tar">tar</h2>
 <p>Archive tool that compresses or decompresses folders. Makes tarballs.</p>
 
-<p><code class="language-plaintext highlighter-rouge">-c</code> Create tar archive<br />
+<p><code class="language-plaintext highlighter-rouge">-c</code> Create tar archive.<br />
 <code class="language-plaintext highlighter-rouge">-z</code> Apply gunzip while compressing or decompressing. Use for <code class="language-plaintext highlighter-rouge">.gz</code> extensions<br />
-<code class="language-plaintext highlighter-rouge">-v</code> Verbose<br />
-<code class="language-plaintext highlighter-rouge">-f</code> File/Folder name<br />
-<code class="language-plaintext highlighter-rouge">-x</code> Decompress archives</p>
+<code class="language-plaintext highlighter-rouge">-v</code> Verbose.<br />
+<code class="language-plaintext highlighter-rouge">-f</code> File/Folder name.<br />
+<code class="language-plaintext highlighter-rouge">-x</code> Decompress archives.</p>
 
-<p>Examples:
+<p><u>Examples</u><br />
 Make tar.gz <code class="language-plaintext highlighter-rouge">tar -czvf [tar.gz name] [folder/file you want to tar]</code><br />
 Extract tar.gz <code class="language-plaintext highlighter-rouge">tar -xzvf foo.tar.gz</code></p>
 
@@ -429,14 +445,24 @@ Extract tar.gz <code class="language-plaintext highlighter-rouge">tar -xzvf foo.
 <code class="language-plaintext highlighter-rouge">--time-stamp-precision</code> With <code class="language-plaintext highlighter-rouge">-tt</code> set decimal places.<sup>(1)</sup><br />
 <code class="language-plaintext highlighter-rouge">-n</code> Don’t convert IPs to hostnames.<br />
 <code class="language-plaintext highlighter-rouge">-X</code> Print ASCII and hex of payloads. 
-<code class="language-plaintext highlighter-rouge">-e</code> Print link level/ethernet packet header.
+<code class="language-plaintext highlighter-rouge">-e</code> Print link level/ethernet packet header. 
 <code class="language-plaintext highlighter-rouge">-w</code> Make pcap from packets captured by filter.</p>
 
-<p>Only DNS packets <code class="language-plaintext highlighter-rouge">tcpdump -r foo.pcap port 53</code><br />
-Exclude outgoing (dst) DNS connections <code class="language-plaintext highlighter-rouge">tcpdump -r foo.pcap not dst port 53</code><br />
-Combination of filters <code class="language-plaintext highlighter-rouge">tcpdump -r foo.pcap not port 53 and not port 22</code>
-Specific source IP <code class="language-plaintext highlighter-rouge">tcpdump -r foo.pcap src 192.168.0.1</code>
-Combination of filter and args <code class="language-plaintext highlighter-rouge">tcpdump -r foo.pcap -ttttnXc 5 port 80</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Only DNS packets
+tcpdump -r foo.pcap port 53
+
+# Exclude outgoing (dst) DNS connections
+tcpdump -r foo.pcap not dst port 53
+
+# Combination of filters
+tcpdump -r foo.pcap not port 53 and not port 22
+
+# Specific source IP
+tcpdump -r foo.pcap src 192.168.0.1
+
+# Combination of filter and args
+tcpdump -r foo.pcap -ttttnXc 5 port 80
+</code></pre></div></div>
 
 <p>Further reading:<br />
 <a href="/addendums.html#digest-big-pcaps">Digest big pcaps</a></p>
@@ -444,16 +470,25 @@ Combination of filter and args <code class="language-plaintext highlighter-rouge
 <h2 id="tr">tr</h2>
 <p>Translate, replace, delete characters. Applies translations line by line.</p>
 
-<p>Replace tabs into new lines <code class="language-plaintext highlighter-rouge">cat conn.log | zeek-cut id.orig_h id.resp_h | tr '\t' '\n' | sort | uniq | wc -l</code><br />
-Lowercase to uppercase <code class="language-plaintext highlighter-rouge">echo "hello world" | tr 'a-z' 'A-Z'</code><br />
-Reverse pipe <code class="language-plaintext highlighter-rouge">tr " " "\t" &lt; input.txt</code><br />
-If a text has inconsistent spaces, use <code class="language-plaintext highlighter-rouge">-s</code> to squeeze repeated instances into a single translation <code class="language-plaintext highlighter-rouge">tr -s " " "\t" &lt; input.txt</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Replace tabs into new lines
+cat conn.log | zeek-cut id.orig_h id.resp_h | tr '\t' '\n' | sort | uniq | wc -l
+
+# Lowercase to uppercase
+echo "hello world" | tr 'a-z' 'A-Z'
+
+# Reverse pipe
+tr " " "\t" &lt; input.txt
+
+# If a text has inconsistent spaces, use `-s` to squeeze repeated instances into a single translation
+tr -s " " "\t" &lt; input.txt
+</code></pre></div></div>
 
 <h2 id="tshark">tshark<img src="/src/kali.ico" alt="" title="Kali Linux" /></h2>
 <p>Cmdline wireshark, wireshark filters are processed as cmdline arguments.<br />
-<strong>Only uses <a href="https://www.tcpdump.org/manpages/pcap-filter.7.html">capture filters</a> for capturing pcaps <code class="language-plaintext highlighter-rouge">-f</code>. Only uses display filters<sup>refs:<a href="https://www.wireshark.org/docs/man-pages/wireshark-filter.html">1, </a></sup><sup><a href="https://www.wireshark.org/docs/dfref/">2, </a></sup><sup>(3)(https://tshark.dev/setup/)</sup> for reading pcaps <code class="language-plaintext highlighter-rouge">-Y</code>.</strong></p>
+<strong>Uses <a href="https://www.tcpdump.org/manpages/pcap-filter.7.html">capture filters</a> for capturing pcaps <code class="language-plaintext highlighter-rouge">-f</code>. See <code class="language-plaintext highlighter-rouge">man pcap-filters</code></strong><br />
+<strong>Uses display filters<sup><a href="https://www.wireshark.org/docs/man-pages/wireshark-filter.html">a, </a></sup><sup><a href="https://www.wireshark.org/docs/dfref/">b, </a></sup><sup><a href="https://tshark.dev/setup/">c</a></sup> for reading pcaps <code class="language-plaintext highlighter-rouge">-Y</code>. See <code class="language-plaintext highlighter-rouge">man wireshark-filters</code></strong></p>
 
-<p><code class="language-plaintext highlighter-rouge">-f</code> Capture packets with pcap-filters/tcpdump expressions.<br />
+<p><code class="language-plaintext highlighter-rouge">-f</code> Capture packets with tcpdump expressions.<br />
 <code class="language-plaintext highlighter-rouge">-Y</code> Apply <a href="https://www.wireshark.org/docs/dfref/">display filters</a><sup>(1)</sup>.<br />
 <code class="language-plaintext highlighter-rouge">-T</code> Specify different output formats like <code class="language-plaintext highlighter-rouge">json</code>, <code class="language-plaintext highlighter-rouge">text</code>, <code class="language-plaintext highlighter-rouge">fields</code><sup>(1)</sup>, etc.<br />
 <code class="language-plaintext highlighter-rouge">-D</code> Lists all available interfaces to listen for traffic.<br />
@@ -474,21 +509,45 @@ If a text has inconsistent spaces, use <code class="language-plaintext highlight
 <code class="language-plaintext highlighter-rouge">-z</code> Protocol Hierarchy<br />
 <code class="language-plaintext highlighter-rouge">-z help | less</code> Display help</p>
 
-<p>(1a): <code class="language-plaintext highlighter-rouge">-Y</code>, <code class="language-plaintext highlighter-rouge">-T fields</code>, <code class="language-plaintext highlighter-rouge">-e</code> are the bread and butter, <code class="language-plaintext highlighter-rouge">-Y</code> finds packets based on the display filter. <code class="language-plaintext highlighter-rouge">-T fields</code> and <code class="language-plaintext highlighter-rouge">-e</code> modifies the output to specific fields. See (1b).<br />
+<p>(1a): <code class="language-plaintext highlighter-rouge">-Y</code>, <code class="language-plaintext highlighter-rouge">-T fields</code>, <code class="language-plaintext highlighter-rouge">-e</code> are the bread and butter, <code class="language-plaintext highlighter-rouge">-Y</code> finds packets based on the display filter. <code class="language-plaintext highlighter-rouge">-T fields</code> and <code class="language-plaintext highlighter-rouge">-e</code> modifies the output to specific fields. See example (1b).<br />
 (4): Specify name resolution options, by default tshark already does <code class="language-plaintext highlighter-rouge">-N dmN</code>. However <code class="language-plaintext highlighter-rouge">-N dmn</code> is probably more useful when reading pcaps because it will get name resolution from the DNS packets inside the pcap instead of external resolution (<code class="language-plaintext highlighter-rouge">-N N</code>) does this.</p>
 
-<p><ins>Examples</ins>:<br />
-(1b): Display only dns queries <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -Y "dns.flags.response == 0" -T fields -e dns.qry.name</code><br />
-(2a): To display packet 100 verbosely <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -Y frame.number==100 -V</code><br />
-(2b): To display a specific tcp stream versbosely <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -Y "tcp.stream eq 0" -V</code><br />
-(3): Add header fields for custom columns <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -E header=y -T fields -e ip.src -e ip.dst -e ip.proto -c 5 | less -sX40</code><br />
-(5): Export http files, exports it to a dir called files <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap --export-objects http,files</code></p>
+<p><ins>Examples</ins>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 1b Display only dns queries  
+tshark -r foo.pcap -Y "dns.flags.response == 0" -T fields -e dns.qry.name
 
-<p>Filter for TCP SYN packets then show src and dst ip with dst ports of the connection then sort for most connections <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -Y tcp.flags==2 -T fields -e ip.src -e ip.dst -e tcp.dstport | sort | uniq -c | sort -n</code><br />
-Filter http content-length which is useful for seeing payload sizes <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -Y http -T fields -e frame.number -e http.content_length</code><br />
-View filter documentation in terminal <code class="language-plaintext highlighter-rouge">tshark -G | egrep '\sip\.' | less -S -x40</code><br />
-Find tcp stream number of tcp data payloads <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -Y tcp.completeness==7 -T fields -e http.request.uri -e tcp.stream | less</code>
-Follow tcp stream 0 data payload <code class="language-plaintext highlighter-rouge">tshark -r foo.pcap -qz follow,tcp,ascii,0</code></p>
+# 2a To display packet 100 verbosely
+tshark -r foo.pcap -Y frame.number==100 -V
+
+# 2b To display a specific tcp stream versbosely
+tshark -r foo.pcap -Y "tcp.stream eq 0" -V
+
+# 3 Add header fields for custom columns
+tshark -r foo.pcap -E header=y -T fields -e ip.src -e ip.dst -e ip.proto -c 5 | less -sX40
+
+# 5 Export http files, exports it to a dir called files
+tshark -r foo.pcap --export-objects http,files 
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Filter for TCP SYN packets then show src and dst ip with dst ports of the connection then sort for most connections
+tshark -r foo.pcap -Y tcp.flags==2 -T fields -e ip.src -e ip.dst -e tcp.dstport | sort | uniq -c | sort -n
+
+# Filter http content-length which is useful for seeing payload sizes
+tshark -r foo.pcap -Y http -T fields -e frame.number -e http.content_length
+
+# View filter documentation in terminal
+tshark -G | egrep '\sip\.' | less -S -x40
+
+# Find tcp stream number of tcp data payloads
+tshark -r foo.pcap -Y tcp.completeness==7 -T fields -e http.request.uri -e tcp.stream | less
+
+# Follow tcp stream 0 data payload
+tshark -r foo.pcap -qz follow,tcp,ascii,0
+</code></pre></div></div>
+
+<p>Practice tool in:<br />
+<a href="https://tryhackme.com/room/tshark">TryHackMe free tshark room</a><br />
+<a href="https://labex.io/skilltrees/wireshark">labex.io lab but ai-powered</a><br />
+<a href="https://malware-traffic-analysis.net/training-exercises.html">malware-traffic-analysis.net Excercises</a></p>
 
 <h2 id="vi">vi</h2>
 <p>Antediluvian text editor, installed by default basically everywhere. Very interesting history lesson by itself.<br />
@@ -498,6 +557,7 @@ Use <code class="language-plaintext highlighter-rouge">vimtutor</code> for a com
 <code class="language-plaintext highlighter-rouge">:q</code> Quit.<br />
 <code class="language-plaintext highlighter-rouge">:q!</code> Force quit.<br />
 <code class="language-plaintext highlighter-rouge">:wq</code> Write and quit.<br />
+<code class="language-plaintext highlighter-rouge">:help &lt;command&gt;</code> Get help on a specific command.<br />
 <code class="language-plaintext highlighter-rouge">y</code> Copy text (yank).<br />
 <code class="language-plaintext highlighter-rouge">p</code> Paste text.<br />
 <code class="language-plaintext highlighter-rouge">ESC</code> Go to command mode.<br />
@@ -519,10 +579,7 @@ Use <code class="language-plaintext highlighter-rouge">vimtutor</code> for a com
 <code class="language-plaintext highlighter-rouge">$</code> go to the end of the current line.<br />
 <code class="language-plaintext highlighter-rouge">2, 3, 4</code> Numbers specify repeats of the same motion<sup>(1)</sup>.</p>
 
-<p><ins>Examples</ins><br />
-<code class="language-plaintext highlighter-rouge">:help wq</code> To get help on a specific command, this one is for wq. This actually opens a 2nd instance of vi, so you use <code class="language-plaintext highlighter-rouge">:q</code> to get out of help.<br />
-(1): <code class="language-plaintext highlighter-rouge">2w</code> Jump 2 words, <code class="language-plaintext highlighter-rouge">3$</code> Go to the end of current line + jump 2 lines.<br />
-(2):</p>
+<p>(1): <code class="language-plaintext highlighter-rouge">2w</code> Jump 2 words, <code class="language-plaintext highlighter-rouge">3$</code> Go to the end of current line + jump 2 lines.</p>
 
 <h2 id="ufw">ufw</h2>
 <p>Linux netfilter firewall. Installed by default on ubuntu.</p>
@@ -588,6 +645,7 @@ Get the XLST stylesheet from wireshark and apply it to an XML<sup>(1)</sup> <cod
 Without format, get hex of “hello world” <code class="language-plaintext highlighter-rouge">echo -n "hello world" | xxd -p</code></p>
 
 <h2 id="zeek">zeek</h2>
+
 <p><a href="/addendums.html#installing-zeek">How to install</a></p>
 
       </div>
@@ -601,7 +659,7 @@ Without format, get hex of “hello world” <code class="language-plaintext hig
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li class="p-name"></li></ul>
+          <li class="p-name">{&quot;name&quot; =&gt; &quot;laufeynumber1fan&quot;}</li></ul>
       </div>
 
       <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
