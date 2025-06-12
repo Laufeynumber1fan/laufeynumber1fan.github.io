@@ -1,7 +1,6 @@
 ---
 layout: default
 Title: Cram
-permalink: /cram.html
 ---
 IT Cram
 
