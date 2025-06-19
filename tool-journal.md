@@ -52,6 +52,12 @@ For interactive exercises see [addendum](/addendums.html#interactive-awk-exercis
 TODO
 Package manager for Debian, Ubuntu, Linux Mint, and Kali Linux. 
 
+## base64
+Do stuff with base64 encoding. B64 outputs always has a character length of a multiple of 4 and <ins>may</ins> have 1 or 2 leading "=" as padding.  
+`base64 <foo.txt> > <foo.bs4>`
+
+`-d <foo.b64> > <foo.txt>` Decode a .b64 file.
+
 ## cat
 TODO
 Con<ins><b>cat</b></ins>anate files, but mainly used to display text.
@@ -340,6 +346,7 @@ Non-interactive drive partitioning (like fdisk).
   
 ## sort
 `-n` Numeric sort  
+`-t` Field separator/delimiter
 `-t -k` Sort based on values from a different column<sup>(1)</sup>  
 `-r` Reverse sort  
 `-u` Unique-only (remove duplicates)  
@@ -360,6 +367,7 @@ Use this to sort the names on the 2nd column `sort -t: -k2 foo.txt`
 
 ## ss
 Dump **s**ocket **s**tatistics. Use as superuser to reveal process information.  
+`ss`
 
 `-t` Display tcp ports.  
 `-u` Display udp ports.  
@@ -370,9 +378,13 @@ Dump **s**ocket **s**tatistics. Use as superuser to reveal process information.
 `-n` Don't resolve names. Port numbers and IP addresses only.  
 
 <u>Examples</u>  
-`ss`  
-`sudo ss -tua | grep 'http'`  
-`sudo ss -tuaen`  
+```
+#  Search for sockets with http
+sudo ss -tua | grep 'http'
+
+# TCP & UDP ports, listening & non-listening, extended info, no name resolution
+sudo ss -tuaen
+```
 
 ## ssh
 OpenSSH client.  
@@ -473,35 +485,33 @@ Cmdline wireshark, wireshark filters are processed as cmdline arguments.
 `-q` Be more quiet, ideally use with `-z`.  
 `-x` Display hex & ASCII dump.  
 `-E` Display options for headers when using `-T`<sup>(3)</sup>.  
-`--export-objects` Export files in tshark, makes a separate directory.<sup>(5)</sup>  
+`-z` Protocol Hierarchy. There's a lot, use `-z help`.    
+`--export-objects <protocol>,<target dir>` Export files in tshark, makes a separate directory.<sup>(5)</sup>  
   
 Advanced help:  
 `-G` Prints every wireshark filter. Use injunction with `egrep "\sPATTERN\." | less -Sx40`.  
 `-G help` more info.  
 `-G protocols` Find abbreviations of protocols.  
-  
-Statistics:  
-`-z` Protocol Hierarchy  
-`-z help | less` Display help  
+`--export-objects` help | less` Display help on a specific command like `--export-objects`.
 
 (1a): `-Y`, `-T fields`, `-e` are the bread and butter, `-Y` finds packets based on the display filter. `-T fields` and `-e` modifies the output to specific fields. See example (1b).  
-(4): Specify name resolution options, by default tshark already does `-N dmN`. However `-N dmn` is probably more useful when reading pcaps because it will get name resolution from the DNS packets inside the pcap instead of external resolution (`-N N`) does this.  
+(4): Specify name resolution options, by default tshark already does `-N dmN`. However `-N dmn` is probably more useful when reading pcaps because it will get name resolution from the DNS packets inside the pcap instead of external resolution (`-N N`) does this.    
 
 <ins>Examples</ins>:  
 ```
-# 1b Display only dns queries  
+#(1b) Display only dns queries  
 tshark -r foo.pcap -Y "dns.flags.response == 0" -T fields -e dns.qry.name
 
-# 2a To display packet 100 verbosely
+#(2a) To display packet 100 verbosely
 tshark -r foo.pcap -Y frame.number==100 -V
 
-# 2b To display a specific tcp stream versbosely
+#(2b) To display a specific tcp stream versbosely
 tshark -r foo.pcap -Y "tcp.stream eq 0" -V
 
-# 3 Add header fields for custom columns
+#(3) Add header fields for custom columns
 tshark -r foo.pcap -E header=y -T fields -e ip.src -e ip.dst -e ip.proto -c 5 | less -sX40
 
-# 5 Export http files, exports it to a dir called files
+#(5) Export http files, exports it to a dir called files
 tshark -r foo.pcap --export-objects http,files 
 ```
 ```
@@ -588,7 +598,6 @@ Example: `whois google.com | less`
 TODO
 
 ## xmllint  
-  
 Check an xml file for format errors<sup>[(1)](/tool-journal.html#tshark)</sup> `xmllint foo.xml --noout`  
   
 (1): Used in converting tshark pdml to xml for viewing pcaps in web browsers.
