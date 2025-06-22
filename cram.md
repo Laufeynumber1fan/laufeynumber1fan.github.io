@@ -5,9 +5,9 @@ title: Cram
 
 <style>
   .page-content > .wrapper {
-  width: 50%;
-  max-width: none;
-  overflow:visible;
+    width: 50%;
+    max-width: none;
+    overflow:visible;
   }
 
   #gif-table td {
@@ -33,8 +33,8 @@ title: Cram
     text-align: left;
     font-style: italic;
   }
-
 </style>
+
 | A+ | Routers, Switches, Hosts, Servers, LAN/WAN
 | Network+ | OSI model, Subnetting, DNS, DHCP, SMTP, FTP
 | Security+ | Attack, Vulnerabilities, Cyber Kill Chain
@@ -58,9 +58,9 @@ A modern computer consists of three major components:<br>
 </div>
 
 Focus on a few hardware parts:
-&nbsp;&nbsp;&nbsp;CPU (Central Processing Unit)
-&nbsp;&nbsp;&nbsp;RAM (Random Access Memory)
-&nbsp;&nbsp;&nbsp;Firmware
+&nbsp;&nbsp;&nbsp;CPU (Central Processing Unit)  
+&nbsp;&nbsp;&nbsp;RAM (Random Access Memory)  
+&nbsp;&nbsp;&nbsp;Firmware  
 At least know what each does.
 
 ### **CPU**
@@ -506,4 +506,3 @@ Combine commands.
 ## **Identifying devices and services**
 ### **DNS, Hostnames, Domain Names**
 Port 53.
-TODO!

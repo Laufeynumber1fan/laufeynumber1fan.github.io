@@ -5,9 +5,9 @@ title: Tools
 
 <style>
   .page-content > .wrapper {
-  width: 60%;
-  max-width: none;
-  overflow:visible;
+    width: 60%;
+    max-width: none;
+    overflow:visible;
   }
 
   h2 > img {
