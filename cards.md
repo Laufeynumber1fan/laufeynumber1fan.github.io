@@ -2,6 +2,7 @@
 layout: default
 title: Cards
 ---
+<meta property="description" content="Quick flashcards by a cybersec student. It covers basic computer networking knowledge and pcap analysis.">
 
 <style>
   .page-content > .wrapper {
@@ -74,6 +75,7 @@ title: Cards
     padding: 0.65em 1em;
     border-radius: 5px;
     min-width: 40%;
+    max-width: 60%;
     cursor: pointer;
     transition: color 0.5s ease, opacity 0.5s ease;
     user-select: none;
@@ -97,7 +99,7 @@ title: Cards
   }
   
   .s2 {
-    background-color: rgb(255, 255, 221);
+    background-color: rgb(240, 240, 221);
   }
 
   .s3 {
@@ -142,6 +144,78 @@ title: Cards
 
   .s12 {
     background-color: rgb(245, 210, 245);
+  }
+
+  .s13 {
+    background-color: rgb(210, 245, 245);
+  }
+
+  .s14 {
+    background-color: rgb(142, 156, 174);
+  }
+  
+  .s15 {
+    background-color: rgb(161, 88, 88);
+  }
+
+  .s16 {
+    background-color: #7db04f;
+  }
+
+  .s17 {
+    background-color: #4fb052;
+  }
+
+  .s18 {
+    background-color: #adb04f;
+  }
+
+  .s19 {
+    background-color: #824fb0;
+  }
+
+  .s20 {
+    background-color: #4fadb0;
+  }
+
+  .s21 {
+    background-color: #b0524f;
+  }
+
+  .s22 {
+    background-color: #b04f7d;
+  }
+
+  .s23 {
+    background-color: #b0383a;
+  }
+
+  .s24 {
+    background-color:rgb(83, 175, 82);
+  }
+
+  .s25 {
+    background-color: #383ab0;
+  }
+
+  .s26 {
+    background-color: #b07238;
+  }
+
+  .s27 {
+    background-color:rgb(199, 111, 157);
+  }
+
+  .s28 {
+    background-color: #76b038;
+  }
+
+  .s29 {
+    background-color: #38b0ae;
+  }
+
+  .s30 {
+    background-color: #7238b0;
   }
 </style>
 
@@ -619,9 +693,240 @@ title: Cards
     </div>
     <div class='card'>
         <div class='card-content s12'>
-            <p></p>
+            <p>67. What does the PSH flag do in TCP packets?</p>
             <input type='checkbox' id='c67' class='hidden'>
-            <label for='c' class='answer'></label>
+            <label for='c67' class='answer'>It's the push flag meant to prioritise this packet and bypass buffering.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s13'>
+            <p>68. In Ethernet frames, what is MTU?</p>
+            <input type='checkbox' id='c68' class='hidden'>
+            <label for='c68' class='answer'>Maximum Transmission Unit for limiting the size of Ethernet frames.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s2'>
+            <p>69. What are the three steps of the TCP Handshake?</p>
+            <input type='checkbox' id='c69' class='hidden'>
+            <label for='c69' class='answer'>SYN, SYN-ACK, ACK</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s3'>
+            <p>70. What flags are used to end a TCP connection?</p>
+            <input type='checkbox' id='c70' class='hidden'>
+            <label for='c70' class='answer'>FIN and ACK.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s1'>
+            <p>71. What is a broadcast IP address?</p>
+            <input type='checkbox' id='c71' class='hidden'>
+            <label for='c71' class='answer'>It's the address used to send packets to every device in the subnet.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s5'>
+            <p>72. What does the MAC address FF:FF:FF:FF:FF:FF mean?</p>
+            <input type='checkbox' id='c72' class='hidden'>
+            <label for='c72' class='answer'>It's the broadcast MAC address for the local network.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s12'>
+            <p>73. What is a firewall policy?</p>
+            <input type='checkbox' id='c73' class='hidden'>
+            <label for='c73' class='answer'>It defines the traffic that firewalls allow or block in the network.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s2'>
+            <p>74. What does it mean when a firewall policy is default deny?</p>
+            <input type='checkbox' id='c74' class='hidden'>
+            <label for='c74' class='answer'>All traffic is blocked.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s13'>
+            <p>75. How do firewalls filter traffic based on website data?</p>
+            <input type='checkbox' id='c75' class='hidden'>
+            <label for='c75' class='answer'>By inspecting the data payload of HTTP packets.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s10'>
+            <p>76. How do firewalls filter traffic based on website data?</p>
+            <input type='checkbox' id='c76' class='hidden'>
+            <label for='c76' class='answer'>By inspecting the data payload of HTTP packets.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s12'>
+            <p>77. What is anomaly-based detection in network security?</p>
+            <input type='checkbox' id='c77' class='hidden'>
+            <label for='c77' class='answer'>A benchmark of normal activity is recorded, any irregular activity is then considered anomalous.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s2'>
+            <p>78. What is signature-based detection in network security?</p>
+            <input type='checkbox' id='c78' class='hidden'>
+            <label for='c78' class='answer'>If traffic matches the signatures of malware the traffic is blocked.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s13'>
+            <p>79. How do firewalls inspect the packets with encrypted payloads?</p>
+            <input type='checkbox' id='c79' class='hidden'>
+            <label for='c79' class='answer'>Through SSL/TLS inspection. Firewalls hold private keys of incoming traffic.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s1'>
+            <p>80. Can firewall be software or hardware?</p>
+            <input type='checkbox' id='c80' class='hidden'>
+            <label for='c80' class='answer'>It can be both.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s10'>
+            <p>81. What is polymorphic malware?</p>
+            <input type='checkbox' id='c81' class='hidden'>
+            <label for='c81' class='answer'>Malware that dynamically changes its signature to bypass detection.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s12'>
+            <p>82. What is a worm?</p>
+            <input type='checkbox' id='c82' class='hidden'>
+            <label for='c82' class='answer'>Malicious code that self-replicates inside a network.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s4'>
+            <p>83. What is a rootkit?</p>
+            <input type='checkbox' id='c83' class='hidden'>
+            <label for='c83' class='answer'>Malware that modify the OS's functions.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s14'>
+            <p>84. What does RAT stand for?</p>
+            <input type='checkbox' id='c84' class='hidden'>
+            <label for='c84' class='answer'>Remote Access Trojan.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s8'>
+            <p>85. What does the term Script Kiddies mean?</p>
+            <input type='checkbox' id='c85' class='hidden'>
+            <label for='c85' class='answer'>Inexperienced attackers that use open-source scripts.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s13'>
+            <p>86. What are the 2 servers needed for Kerberos?</p>
+            <input type='checkbox' id='c86' class='hidden'>
+            <label for='c86' class='answer'>Authentication Server and Ticket Granting Server.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s1'>
+            <p>87. What are digital certificates used for?</p>
+            <input type='checkbox' id='c87' class='hidden'>
+            <label for='c87' class='answer'>Data encryption.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s15'>
+            <p>88. What do you do in Weaponisation(2) in the Cyber Kill Chain?</p>
+            <input type='checkbox' id='c88' class='hidden'>
+            <label for='c88' class='answer'>Find or develop malicious payloads to attack a network.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s16'>
+            <p>89. What do you do in the 8th step of the Cyber Kill Chain?</p>
+            <input type='checkbox' id='c89' class='hidden'>
+            <label for='c89' class='answer'>There's only 7 steps!</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s17'>
+            <p>90. What do you do in Exploitation(4) in the Cyber Kill Chain?</p>
+            <input type='checkbox' id='c90' class='hidden'>
+            <label for='c90' class='answer'>Exploit vulnerabilities to bypass security measures.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s19'>
+            <p>91. What is a logic bomb?</p>
+            <input type='checkbox' id='c91' class='hidden'>
+            <label for='c91' class='answer'>A malicious payload that hides and waits for a date or event before activating.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s20'>
+            <p>92. Can you use hashes to encrypt files?</p>
+            <input type='checkbox' id='c92' class='hidden'>
+            <label for='c92' class='answer'>No, hashing is irreversible.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s21'>
+            <p>93. What's the difference between encoding and encrypting?</p>
+            <input type='checkbox' id='c93' class='hidden'>
+            <label for='c93' class='answer'>Encrypting needs public and private keys to secure data. Encoding like gzip can be easily decoded by anyone.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s22'>
+            <p>94. What is more secure, MD5 or SHA-256?</p>
+            <input type='checkbox' id='c94' class='hidden'>
+            <label for='c94' class='answer'>SHA-256 is a stronger and newer algorithm.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s23'>
+            <p>95. What encoding algorithm would have leading "==" as padding?</p>
+            <input type='checkbox' id='c95' class='hidden'>
+            <label for='c95' class='answer'>Base64.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s24'>
+            <p>96. Why is ROT-26 not a valid encoding algorithm?</p>
+            <input type='checkbox' id='c96' class='hidden'>
+            <label for='c96' class='answer'>It applies ROT-13 twice. This is a joke.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s25'>
+            <p>97. Are private and public keys involved in symmetric encryption?</p>
+            <input type='checkbox' id='c97' class='hidden'>
+            <label for='c97' class='answer'>No, those are for asymmetric.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s26'>
+            <p>98. Is Kerberos symmetric or asymmetric encryption?</p>
+            <input type='checkbox' id='c98' class='hidden'>
+            <label for='c98' class='answer'>Symmetric encryption.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s27'>
+            <p>99. What is SFTP?</p>
+            <input type='checkbox' id='c99' class='hidden'>
+            <label for='c99' class='answer'>A protocol that combines SSH and FTP for secure file transfers.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s28'>
+            <p>100. Why would a sender share the public key and not the private key?</p>
+            <input type='checkbox' id='c100' class='hidden'>
+            <label for='c100' class='answer'>The public key is used to encrypt the reply. The private key then decrpypts the encrypted response.</label>
         </div>
     </div>
   </div>
