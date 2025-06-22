@@ -42,7 +42,7 @@ title: Cards
     width: 10vh;
     font-size: 3em;
     color:rgb(44, 44, 44);
-    transition: color 0.2s, background-color 0.2s;
+    transition: color 0.1s, background-color 0.1s;
   }
   
   .cards-btn:hover {
@@ -52,7 +52,7 @@ title: Cards
   .card-content {
     display: block;
     margin: 18vh auto 0 auto;
-    width: 45%;
+    width: 55%;
     height: 30%;
     border-radius: 5px;
     padding: 10px;
@@ -71,7 +71,7 @@ title: Cards
     display: inline-block;
     background-color:rgb(255, 255, 255);
     color: transparent;
-    padding: 0.65em 1.25em;
+    padding: 0.65em 1em;
     border-radius: 5px;
     min-width: 40%;
     cursor: pointer;
@@ -131,6 +131,18 @@ title: Cards
   .s9 {
     background-color: rgb(216, 216, 239);
   }
+
+  .s10 {
+    background-color: rgb(255, 236, 216);
+  }
+
+  .s11 {
+    background-color: rgb(200, 200, 225);
+  }
+
+  .s12 {
+    background-color: rgb(245, 210, 245);
+  }
 </style>
 
 
@@ -147,7 +159,7 @@ title: Cards
         <div class='card-content s1'>
             <p>1. What does TCP stand for?</p>
             <input type='checkbox' id='c1' class='hidden'>
-            <label for='c1' class='answer'>Transmission Control Protocol</label>
+            <label for='c1' class='answer'>Transmission Control Protocol.</label>
         </div>
     </div>
     <div class='card'>
@@ -161,7 +173,7 @@ title: Cards
         <div class='card-content s4'>
             <p>3. What port is DNS?</p>
             <input type='checkbox' id='c3' class='hidden'>
-            <label for='c3' class='answer'>TCP/UDP port 53</label>
+            <label for='c3' class='answer'>TCP/UDP port 53.</label>
         </div>
     </div>
     <div class='card'>
@@ -172,31 +184,31 @@ title: Cards
         </div>
     </div>
     <div class='card'>
-        <div class='card-content s4'>
+        <div class='card-content s10'>
             <p>5. Name the TCP/IP layer that TCP belongs to.</p>
             <input type='checkbox' id='c5' class='hidden'>
-            <label for='c5' class='answer'>Transport Layer</label>
+            <label for='c5' class='answer'>Transport Layer.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s6'>
             <p>6. Which OSI layer does a router operate in.</p>
             <input type='checkbox' id='c6' class='hidden'>
-            <label for='c6' class='answer'>Layer 3/Network Layer</label>
+            <label for='c6' class='answer'>Layer 3 (Network).</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s1'>
             <p>7. What feature gives switches layer 3 functionality?</p>
             <input type='checkbox' id='c7' class='hidden'>
-            <label for='c7' class='answer'>Inter-VLAN routing</label>
+            <label for='c7' class='answer'>Inter-VLAN routing.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s9'>
             <p>8. What port is DHCP?</p>
             <input type='checkbox' id='c8' class='hidden'>
-            <label for='c8' class='answer'>UDP port 67 and 68</label>
+            <label for='c8' class='answer'>UDP port 67 and 68.</label>
         </div>
     </div>
     <div class='card'>
@@ -217,21 +229,21 @@ title: Cards
         <div class='card-content s1'>
             <p>11. What does DHCP stand for?</p>
             <input type='checkbox' id='c11' class='hidden'>
-            <label for='c11' class='answer'>Dynamic Host Configuration Protocol</label>
+            <label for='c11' class='answer'>Dynamic Host Configuration Protocol.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s8'>
             <p>12. What does OSI layer 6 do?</p>
             <input type='checkbox' id='c12' class='hidden'>
-            <label for='c12' class='answer'>Data encryption and compression</label>
+            <label for='c12' class='answer'>Data encryption and compression.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s1'>
             <p>13. What port is FTP?</p>
             <input type='checkbox' id='c13' class='hidden'>
-            <label for='c13' class='answer'>FTP servers use TCP port 21, FTP clients use TCP port 20</label>
+            <label for='c13' class='answer'>FTP servers use TCP port 21, FTP clients use TCP port 20.</label>
         </div>
     </div>
     <div class='card'>
@@ -245,7 +257,7 @@ title: Cards
         <div class='card-content s6'>
             <p>15. What's the difference between POP3 and SMTP?</p>
             <input type='checkbox' id='c15' class='hidden'>
-            <label for='c15' class='answer'>STMP sends email from sender to reciever's mail server<br>POP3 is used by the receiver to fetch mail from the mail server</label>
+            <label for='c15' class='answer'>STMP sends email from sender to reciever's mail server.<br>POP3 is used by the receiver to fetch mail from the mail server.</label>
         </div>
     </div>
     <div class='card'>
@@ -259,7 +271,7 @@ title: Cards
         <div class='card-content s9'>
             <p>17. What does UDP stand for?</p>
             <input type='checkbox' id='c17' class='hidden'>
-            <label for='c17' class='answer'>User Datagram Protocol</label>
+            <label for='c17' class='answer'>User Datagram Protocol.</label>
         </div>
     </div>
     <div class='card'>
@@ -273,28 +285,28 @@ title: Cards
         <div class='card-content s9'>
             <p>19. Which OSI layer do switches mainly operate?</p>
             <input type='checkbox' id='c19' class='hidden'>
-            <label for='c19' class='answer'>Layer 2, Data Link Layer</label>
+            <label for='c19' class='answer'>Layer 2 (Data Link).</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s5'>
-            <p>20. Name the layers of the TCP/IP model</p>
+            <p>20. Name the layers of the TCP/IP model.</p>
             <input type='checkbox' id='c20' class='hidden'>
-            <label for='c20' class='answer'>Network Access, Internet, Transport, Application</label>
+            <label for='c20' class='answer'>Network Access, Internet, Transport, Application.</label>
         </div>
     </div>
     <div class='card'>
-        <div class='card-content s1'>
+        <div class='card-content s11'>
             <p>21. What is the shorthand for the subnet mask 255.255.252.0?</p>
             <input type='checkbox' id='c21' class='hidden'>
-            <label for='c21' class='answer'>/22</label>
+            <label for='c21' class='answer'>/22.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s3'>
-            <p>22. What is the broadcast address for the network 172.25.0.0/24</p>
+            <p>22. What is the broadcast address for the network 172.25.0.0/24?</p>
             <input type='checkbox' id='c22' class='hidden'>
-            <label for='c22' class='answer'>172.25.0.255</label>
+            <label for='c22' class='answer'>172.25.0.255.</label>
         </div>
     </div>
     <div class='card'>
@@ -308,119 +320,308 @@ title: Cards
         <div class='card-content s1'>
             <p>24. What class is the IP address 8.8.8.8?</p>
             <input type='checkbox' id='c' class='hidden'>
-            <label for='c' class='answer'>Class A</label>
+            <label for='c' class='answer'>Class A.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s9'>
             <p>25. What is the full subnet mask for /28?</p>
             <input type='checkbox' id='c25' class='hidden'>
-            <label for='c25' class='answer'>255.255.255.240</label>
+            <label for='c25' class='answer'>255.255.255.240.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s4'>
             <p>26. What is the valid host range for the network 192.168.0.64/26?</p>
             <input type='checkbox' id='c26' class='hidden'>
-            <label for='c26' class='answer'>192.168.0.65-192.168.0.126</label>
+            <label for='c26' class='answer'>192.168.0.65-192.168.0.126.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s2'>
-            <p>27. How many usable (hosts + network + broadcast) IP addresses are in a /30 subnet?</p>
+            <p>27. How many usable IP addresses are in a /30 subnet?</p>
             <input type='checkbox' id='c27' class='hidden'>
-            <label for='c27' class='answer'>4</label>
+            <label for='c27' class='answer'>4.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s7'>
-            <p>28. What is the first usable host IP address in the network 251.156.11.64/15</p>
+            <p>28. What is the first usable host IP address in the network 251.156.11.64/15?</p>
             <input type='checkbox' id='c28' class='hidden'>
-            <label for='c28' class='answer'>251.156.11.65</label>
+            <label for='c28' class='answer'>251.156.11.65.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s9'>
             <p>29. What is the full subnet mask for /24?</p>
             <input type='checkbox' id='c29' class='hidden'>
-            <label for='c29' class='answer'>255.255.255.0</label>
+            <label for='c29' class='answer'>255.255.255.0.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s1'>
-            <p>30. What is the broadcast address for the network 192.168.2.0/25</p>
+            <p>30. What is the broadcast address for the network 192.168.2.0/25?</p>
             <input type='checkbox' id='c30' class='hidden'>
-            <label for='c30' class='answer'>192.168.2.127</label>
+            <label for='c30' class='answer'>192.168.2.127.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s7'>
-            <p>31. What is valid host range for the network 10.1.0.64/27</p>
+            <p>31. What is valid host range for the network 10.1.0.64/27?</p>
             <input type='checkbox' id='c31' class='hidden'>
-            <label for='c31' class='answer'>10.1.0.65-10.1.0.94</label>
+            <label for='c31' class='answer'>10.1.0.65-10.1.0.94.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s4'>
-            <p>32. What is the full subnet mask for /18</p>
+            <p>32. What is the full subnet mask for /18?</p>
             <input type='checkbox' id='c32' class='hidden'>
-            <label for='c32' class='answer'>255.255.192.0</label>
+            <label for='c32' class='answer'>255.255.192.0.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s7'>
             <p>33. What class is the IP address 172.0.0.1?</p>
             <input type='checkbox' id='c33' class='hidden'>
-            <label for='c33' class='answer'>Class B</label>
+            <label for='c33' class='answer'>Class B.</label>
         </div>
     </div>
     <div class='card'>
-        <div class='card-content s8'>
+        <div class='card-content s10'>
             <p>34. What is the default gateway for the IP address 192.168.12.254/24?</p>
             <input type='checkbox' id='c34' class='hidden'>
-            <label for='c34' class='answer'>192.168.12.1</label>
+            <label for='c34' class='answer'>192.168.12.1.</label>
         </div>
     </div>
     <div class='card'>
-        <div class='card-content s2'>
+        <div class='card-content s11'>
             <p>35. What is the shorthand for the subnet mask 255.255.255.254?</p>
             <input type='checkbox' id='c35' class='hidden'>
-            <label for='c35' class='answer'>/31</label>
+            <label for='c35' class='answer'>/31.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s5'>
             <p>36. What is the valid host range for the network 10.10.1.64/28?</p>
             <input type='checkbox' id='c36' class='hidden'>
-            <label for='c36' class='answer'>10.10.1.65-10.10.1.78</label>
+            <label for='c36' class='answer'>10.10.1.65-10.10.1.78.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s1'>
             <p>37. What is the default gateway for the IP address 200.10.10.3/30</p>
             <input type='checkbox' id='c37' class='hidden'>
-            <label for='c37' class='answer'>200.10.10.1</label>
+            <label for='c37' class='answer'>200.10.10.1.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s8'>
             <p>38. What network does the IP address 192.168.0.25/25 belong to?</p>
             <input type='checkbox' id='c38' class='hidden'>
-            <label for='c38' class='answer'>192.168.0.0</label>
+            <label for='c38' class='answer'>192.168.0.0.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s5'>
             <p>39. What network does the IP address 172.16.50.16/23 belong to?</p>
             <input type='checkbox' id='c39' class='hidden'>
-            <label for='c39' class='answer'>172.16.50.0</label>
+            <label for='c39' class='answer'>172.16.50.0.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s2'>
             <p>40. What is the default gateway for the IP address 10.0.0.130/26</p>
-            <input type='checkbox' id='c' class='hidden'>
-            <label for='c' class='answer'>10.0.0.129</label>
+            <input type='checkbox' id='c40' class='hidden'>
+            <label for='c40' class='answer'>10.0.0.129.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s7'>
+            <p>41. Can a router provide DHCP services?</p>
+            <input type='checkbox' id='c41' class='hidden'>
+            <label for='c41' class='answer'>Yes, routers can provide DHCP to its local subnet.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s2'>
+            <p>42. What does ARP stand for?</p>
+            <input type='checkbox' id='c42' class='hidden'>
+            <label for='c42' class='answer'>Address Resolution Protocol.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s9'>
+            <p>43. Why does a device need a MAC address?</p>
+            <input type='checkbox' id='c43' class='hidden'>
+            <label for='c43' class='answer'>It's used for layer 2/LAN routing. Without a MAC address it cannot use a network interface and Ethernet.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s2'>
+            <p>44. Why would you refer to the TCP/IP model instead of the OSI model?</p>
+            <input type='checkbox' id='c44' class='hidden'>
+            <label for='c44' class='answer'>The TCP/IP model describes Internet communication. The OSI model is outdated.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s10'>
+            <p>45. What does NAT stand for?</p>
+            <input type='checkbox' id='c45' class='hidden'>
+            <label for='c45' class='answer'>Network Address Translation.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s5'>
+            <p>46. Why would a router do port forwarding?</p>
+            <input type='checkbox' id='c46' class='hidden'>
+            <label for='c46' class='answer'>Routers only have a single public IP address, in order to route traffic to the correct private IP, the public IP uses ports to identify the correct private IP.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s1'>
+            <p>47. Can a router perform NAT?</p>
+            <input type='checkbox' id='c47' class='hidden'>
+            <label for='c47' class='answer'>Yes.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s7'>
+            <p>48. Can a router do ARP?</p>
+            <input type='checkbox' id='c48' class='hidden'>
+            <label for='c48' class='answer'>Yes. Just like any device in the network, a router can also use ARP to build its own ARP table.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s10'>
+            <p>49. What's the difference between HTTP and HTTPS?</p>
+            <input type='checkbox' id='c49' class='hidden'>
+            <label for='c49' class='answer'>HTTPS uses SSL/TLS to encrypt web traffic, HTTP does not encrypt its traffic so it is less secure.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s2'>
+            <p>50. What TCP/IP layer does FTP work in?</p>
+            <input type='checkbox' id='c50' class='hidden'>
+            <label for='c50' class='answer'>Layer 4 (Application).</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s9'>
+            <p>51. Can a host also be a server?</p>
+            <input type='checkbox' id='c51' class='hidden'>
+            <label for='c51' class='answer'>Yes. As long as they don't use the same port.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s11'>
+            <p>52. How many bits are in a IPv4 address?</p>
+            <input type='checkbox' id='c52' class='hidden'>
+            <label for='c52' class='answer'>32 bits.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s10'>
+            <p>53. Which protocol is implemented to mitigate IPv4 address exhaustion?</p>
+            <input type='checkbox' id='c53' class='hidden'>
+            <label for='c53' class='answer'>NAT.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s2'>
+            <p>54. What port is HTTP and HTTPS?</p>
+            <input type='checkbox' id='c54' class='hidden'>
+            <label for='c54' class='answer'>HTTP uses TCP port 80, HTTPS uses TCP port 443.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s7'>
+            <p>55. What does DNS do with URLs and IPs?</p>
+            <input type='checkbox' id='c55' class='hidden'>
+            <label for='c55' class='answer'>It translate network IP addresses into human-readable urls in order to easily connect to domains and websites.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s2'>
+            <p>56. List 5 common DNS record types.</p>
+            <input type='checkbox' id='c56' class='hidden'>
+            <label for='c56' class='answer'>A, AAAA, CNAME, NS, MX.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s5'>
+            <p>57. Why would an online banking site need SSL/TLS?</p>
+            <input type='checkbox' id='c57' class='hidden'>
+            <label for='c57' class='answer'>Sensitive information like passwords must be encrypted with SSL/TLS or else it will be human-readable and then stolen.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s4'>
+            <p>58. What role does an IDS/IPS do inside a network?</p>
+            <input type='checkbox' id='c58' class='hidden'>
+            <label for='c58' class='answer'>They are network security devices similar to firewalls.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s10'>
+            <p>59. What layer 2 technology connects devices inside a network?</p>
+            <input type='checkbox' id='c59' class='hidden'>
+            <label for='c59' class='answer'>Ethernet.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s12'>
+            <p>60. What role do router ACLs do inside a network?</p>
+            <input type='checkbox' id='c60' class='hidden'>
+            <label for='c60' class='answer'>ACLs are basic traffic filters that allow or block certain IP addresses into the network.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s11'>
+            <p>61. Can switches have ACLs?</p>
+            <input type='checkbox' id='c61' class='hidden'>
+            <label for='c61' class='answer'>Yes, if it enabled inter-VLAN routing.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s4'>
+            <p>62. Which bytes of a MAC address identify the manufacturer?</p>
+            <input type='checkbox' id='c62' class='hidden'>
+            <label for='c62' class='answer'>The first 3 bytes.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s1'>
+            <p>63. What is nbns?</p>
+            <input type='checkbox' id='c63' class='hidden'>
+            <label for='c63' class='answer'>It's a network protocol for NetBIOS name resolution.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s7'>
+            <p>64. What port does Kerberos use?</p>
+            <input type='checkbox' id='c64' class='hidden'>
+            <label for='c64' class='answer'>It mainly uses UDP port 88 but it may use others.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s12'>
+            <p>65. What is a DHCP lease?</p>
+            <input type='checkbox' id='c65' class='hidden'>
+            <label for='c65' class='answer'>It is a temporary IP address leased by the DHCP server for a limited time.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s10'>
+            <p>66. What routing algorithms do WAN use?</p>
+            <input type='checkbox' id='c66' class='hidden'>
+            <label for='c66' class='answer'>BGP (Border Gateway Protocol).</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s12'>
+            <p></p>
+            <input type='checkbox' id='c67' class='hidden'>
+            <label for='c' class='answer'></label>
         </div>
     </div>
   </div>
