@@ -54,7 +54,7 @@ title: Cards
     display: block;
     margin: 18vh auto 0 auto;
     width: 55%;
-    height: 30%;
+    min-height: 30%;
     border-radius: 5px;
     padding: 10px;
     padding-top: 3em;
@@ -217,6 +217,46 @@ title: Cards
   .s30 {
     background-color: #7238b0;
   }
+
+  .s31 {
+    background-color: #583c96;
+  }
+
+  .s32 {
+    background-color: #96583c;
+  }
+
+  .s33 {
+    background-color: #3c9658;
+  }
+
+  .s34 {
+    background-color: #8a4641;
+  }
+
+  .s35 {
+    background-color: #618a41;
+  }
+
+  .s36 {
+    background-color: #41868a;
+  }
+
+  .s37 {
+    background-color: #6a418a;
+  }
+
+  .s38 {
+    background-color: #864686;
+  }
+
+  .s39 {
+    background-color: #468646;
+  }
+
+  .s40 {
+    background-color: #a3605c;
+  }
 </style>
 
 
@@ -282,7 +322,7 @@ title: Cards
         <div class='card-content s9'>
             <p>8. What port is DHCP?</p>
             <input type='checkbox' id='c8' class='hidden'>
-            <label for='c8' class='answer'>UDP port 67 and 68.</label>
+            <label for='c8' class='answer'>UDP port 67 for requests and 68 for replies.</label>
         </div>
     </div>
     <div class='card'>
@@ -927,6 +967,132 @@ title: Cards
             <p>100. Why would a sender share the public key and not the private key?</p>
             <input type='checkbox' id='c100' class='hidden'>
             <label for='c100' class='answer'>The public key is used to encrypt the reply. The private key then decrpypts the encrypted response.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s29'>
+            <p>101. Which tcpdump option lets you 'carve' pcaps?</p>
+            <input type='checkbox' id='c101' class='hidden'>
+            <label for='c101' class='answer'>-w</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s30'>
+            <p>102. How do you filter for https traffic in tcpdump?</p>
+            <input type='checkbox' id='c102' class='hidden'>
+            <label for='c102' class='answer'>port 443</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s25'>
+            <p>103. Which tcpdump option switches timestamps to UTC time?</p>
+            <input type='checkbox' id='c103' class='hidden'>
+            <label for='c103' class='answer'>-tttt</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s24'>
+            <p>104. In tcpdump, why would do <code>-w</code> instead of <code>> foo.pcap</code> ?</p>
+            <input type='checkbox' id='c104' class='hidden'>
+            <label for='c104' class='answer'>> foo.pcap will just make a new text file and so will not be a readable pcap.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s31'>
+            <p>105. Does <code>tcpdump -nn</code> slow down command execution?</p>
+            <input type='checkbox' id='c105' class='hidden'>
+            <label for='c105' class='answer'>No, -nn disables hostname and port resolution so it actually makes the command go faster.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s32'>
+            <p>106. In tcpdump, how do you extract hostnames from DHCP?</p>
+            <input type='checkbox' id='c106' class='hidden'>
+            <label for='c106' class='answer'>tcpdump -r foo.pcap -v port 67 or port 68 | grep Hostname</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s33'>
+            <p>107. In tcpdump, what does the tcpflag [S.] mean?</p>
+            <input type='checkbox' id='c107' class='hidden'>
+            <label for='c107' class='answer'>SYN-ACK.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s34'>
+            <p>108. In tcpdump, how do you filter 192.168.0.1's FTP traffic?</p>
+            <input type='checkbox' id='c108' class='hidden'>
+            <label for='c108' class='answer'>ip host 192.168.0.1 and port 20 and port 21</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s35'>
+            <p>109. How do you pipe tcpdump -r output to awk?</p>
+            <input type='checkbox' id='c109' class='hidden'>
+            <label for='c109' class='answer'>tcpdump -r foo.pcap | awk '$0'</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s37'>
+            <p>110. How do you print the 13th field using awk?</p>
+            <input type='checkbox' id='c110' class='hidden'>
+            <label for='c110' class='answer'>awk '{print $13}'</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s36'>
+            <p>111. How can you print the last field using awk?</p>
+            <input type='checkbox' id='c111' class='hidden'>
+            <label for='c111' class='answer'>awk '{print $NF}'</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s37'>
+            <p>112. In awk, how do you filter for the ip 172.16.0.1 and then print the 5th field?</p>
+            <input type='checkbox' id='c112' class='hidden'>
+            <label for='c112' class='answer'>awk '/172.16.0.1/{print $5}'</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s38'>
+            <p>113. Given a list of filenames, how would you use regex to only filter for html files?</p>
+            <input type='checkbox' id='c113' class='hidden'>
+            <label for='c113' class='answer'>.html$</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s39'>
+            <p>114. How would you use awk to filter for lines that have greater than 15 characters?</p>
+            <input type='checkbox' id='c114' class='hidden'>
+            <label for='c114' class='answer'>awk 'length{$0}>15'</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s40'>
+            <p>115. How would you use awk to print the character length of the 2nd field in each line?</p>
+            <input type='checkbox' id='c115' class='hidden'>
+            <label for='c115' class='answer'>awk '{print length($2)}'</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s32'>
+            <p>116. Where does usually Linux keep a file that lists the port mappings for every service?</p>
+            <input type='checkbox' id='c116' class='hidden'>
+            <label for='c116' class='answer'>/etc/services</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s38'>
+            <p>117. How would you use Linux's /etc/services to find the port numbers of all SQL services?</p>
+            <input type='checkbox' id='c117' class='hidden'>
+            <label for='c117' class='answer'>cat /etc/services | grep sql -i</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s35'>
+            <p>118. How would use Linux's /etc/services to the find the service with the default port of 4094?</p>
+            <input type='checkbox' id='c118' class='hidden'>
+            <label for='c118' class='answer'>cat /etc/services | grep 4094</label>
         </div>
     </div>
   </div>

@@ -429,10 +429,9 @@ Cmdline pcap analyser, similar to tshark but lightweight. Has simpler filters.
 `-tt` Switch time to epoch.  
 `--time-stamp-precision` With `-tt` set decimal places.<sup>(1)</sup>  
 `-n` Don't convert IPs to hostnames.  
-`-X` Print ASCII and hex of payloads. 
-`-e` Print link level/ethernet packet header. 
+`-X` Print ASCII and hex of payloads.  
+`-e` Print link level/ethernet packet header.  
 `-w` Make pcap from packets captured by filter.  
-
 ```
 # Only DNS packets
 tcpdump -r foo.pcap port 53
