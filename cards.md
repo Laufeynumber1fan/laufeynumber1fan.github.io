@@ -413,14 +413,14 @@ title: Cards
         <div class='card-content s11'>
             <p>21. What is the shorthand for the subnet mask 255.255.252.0?</p>
             <input type='checkbox' id='c21' class='hidden'>
-            <label for='c21' class='answer'>/22.</label>
+            <label for='c21' class='answer'>/22</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s3'>
             <p>22. What is the broadcast address for the network 172.25.0.0/24?</p>
             <input type='checkbox' id='c22' class='hidden'>
-            <label for='c22' class='answer'>172.25.0.255.</label>
+            <label for='c22' class='answer'>172.25.0.255</label>
         </div>
     </div>
     <div class='card'>
@@ -441,56 +441,56 @@ title: Cards
         <div class='card-content s9'>
             <p>25. What is the full subnet mask for /28?</p>
             <input type='checkbox' id='c25' class='hidden'>
-            <label for='c25' class='answer'>255.255.255.240.</label>
+            <label for='c25' class='answer'>255.255.255.240</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s4'>
             <p>26. What is the valid host range for the network 192.168.0.64/26?</p>
             <input type='checkbox' id='c26' class='hidden'>
-            <label for='c26' class='answer'>192.168.0.65-192.168.0.126.</label>
+            <label for='c26' class='answer'>192.168.0.65-192.168.0.126</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s2'>
             <p>27. How many usable IP addresses are in a /30 subnet?</p>
             <input type='checkbox' id='c27' class='hidden'>
-            <label for='c27' class='answer'>4.</label>
+            <label for='c27' class='answer'>4</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s7'>
             <p>28. What is the first usable host IP address in the network 251.156.11.64/15?</p>
             <input type='checkbox' id='c28' class='hidden'>
-            <label for='c28' class='answer'>251.156.11.65.</label>
+            <label for='c28' class='answer'>251.156.11.65</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s9'>
             <p>29. What is the full subnet mask for /24?</p>
             <input type='checkbox' id='c29' class='hidden'>
-            <label for='c29' class='answer'>255.255.255.0.</label>
+            <label for='c29' class='answer'>255.255.255.0</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s1'>
             <p>30. What is the broadcast address for the network 192.168.2.0/25?</p>
             <input type='checkbox' id='c30' class='hidden'>
-            <label for='c30' class='answer'>192.168.2.127.</label>
+            <label for='c30' class='answer'>192.168.2.127</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s7'>
             <p>31. What is valid host range for the network 10.1.0.64/27?</p>
             <input type='checkbox' id='c31' class='hidden'>
-            <label for='c31' class='answer'>10.1.0.65-10.1.0.94.</label>
+            <label for='c31' class='answer'>10.1.0.65-10.1.0.94</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s4'>
             <p>32. What is the full subnet mask for /18?</p>
             <input type='checkbox' id='c32' class='hidden'>
-            <label for='c32' class='answer'>255.255.192.0.</label>
+            <label for='c32' class='answer'>255.255.192.0</label>
         </div>
     </div>
     <div class='card'>
@@ -504,49 +504,49 @@ title: Cards
         <div class='card-content s10'>
             <p>34. What is the default gateway for the IP address 192.168.12.254/24?</p>
             <input type='checkbox' id='c34' class='hidden'>
-            <label for='c34' class='answer'>192.168.12.1.</label>
+            <label for='c34' class='answer'>192.168.12.1</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s11'>
             <p>35. What is the shorthand for the subnet mask 255.255.255.254?</p>
             <input type='checkbox' id='c35' class='hidden'>
-            <label for='c35' class='answer'>/31.</label>
+            <label for='c35' class='answer'>/31</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s5'>
             <p>36. What is the valid host range for the network 10.10.1.64/28?</p>
             <input type='checkbox' id='c36' class='hidden'>
-            <label for='c36' class='answer'>10.10.1.65-10.10.1.78.</label>
+            <label for='c36' class='answer'>10.10.1.65-10.10.1.78</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s1'>
             <p>37. What is the default gateway for the IP address 200.10.10.3/30</p>
             <input type='checkbox' id='c37' class='hidden'>
-            <label for='c37' class='answer'>200.10.10.1.</label>
+            <label for='c37' class='answer'>200.10.10.1</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s8'>
             <p>38. What network does the IP address 192.168.0.25/25 belong to?</p>
             <input type='checkbox' id='c38' class='hidden'>
-            <label for='c38' class='answer'>192.168.0.0.</label>
+            <label for='c38' class='answer'>192.168.0.0</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s5'>
             <p>39. What network does the IP address 172.16.50.16/23 belong to?</p>
             <input type='checkbox' id='c39' class='hidden'>
-            <label for='c39' class='answer'>172.16.50.0.</label>
+            <label for='c39' class='answer'>172.16.50.0</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s2'>
             <p>40. What is the default gateway for the IP address 10.0.0.130/26</p>
             <input type='checkbox' id='c40' class='hidden'>
-            <label for='c40' class='answer'>10.0.0.129.</label>
+            <label for='c40' class='answer'>10.0.0.129</label>
         </div>
     </div>
     <div class='card'>
@@ -1093,6 +1093,76 @@ title: Cards
             <p>118. How would use Linux's /etc/services to the find the service with the default port of 4094?</p>
             <input type='checkbox' id='c118' class='hidden'>
             <label for='c118' class='answer'>cat /etc/services | grep 4094</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s36'>
+            <p>119. As a tshark filter, how would you find probable domain names in kerberos traffic?</p>
+            <input type='checkbox' id='c119' class='hidden'>
+            <label for='c119' class='answer'>kerberos.realm</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s37'>
+            <p>120. Describe this awk statement: awk '$3 !~ /172.16.0.*/'</p>
+            <input type='checkbox' id='c120' class='hidden'>
+            <label for='c120' class='answer'>If the 3rd field contains the regex expression 172.16.0.* then print the entire line.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s38'>
+            <p>121. Describe what this command does: <code>zeek -r foo.pcap local</code></p>
+            <input type='checkbox' id='c121' class='hidden'>
+            <label for='c121' class='answer'>This is a zeek command that runs all local zeek scripts on the pcap.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s39'>
+            <p>122. Can you find a device's hostname in DHCP traffic?</p>
+            <input type='checkbox' id='c122' class='hidden'>
+            <label for='c122' class='answer'>Yes, the tshark filter is dhcp.option.hostname</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s40'>
+            <p>123. What is the tshark filter for Netbios Name Service packets?</p>
+            <input type='checkbox' id='c123' class='hidden'>
+            <label for='c123' class='answer'>nbns</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s24'>
+            <p>124. Describe this command: <code>tshark -r foo.pcap -Y 'nbns.flags.response==True' -T fields -e nbns.name</p>
+            <input type='checkbox' id='c124' class='hidden'>
+            <label for='c124' class='answer'>It's a tshark command that filters for NetBios responses and prints the hostnames of those responses.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s25'>
+            <p>125. Name some protocols in pcap analysis that you can investigate to find a device's hostname.</p>
+            <input type='checkbox' id='c125' class='hidden'>
+            <label for='c125' class='answer'>Kerberos, NetBios, LDAP, DHCP, DNS, and more!</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s27'>
+            <p>126. Describe this wireshark filter <code>ip contains "google.com"</code></p>
+            <input type='checkbox' id='c126' class='hidden'>
+            <label for='c126' class='answer'>Filter for packets with the string google.com</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s29'>
+            <p>127. Describe this wireshark filter <code>http matches "^(get|post)"</code></p>
+            <input type='checkbox' id='c127' class='hidden'>
+            <label for='c127' class='answer'>matches indicates a regex expression. The regex itself filters for http payloads that starts with either GET or POST.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s31'>
+            <p>128. </p>
+            <input type='checkbox' id='c128' class='hidden'>
+            <label for='c128' class='answer'></label>
         </div>
     </div>
   </div>

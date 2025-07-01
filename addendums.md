@@ -208,3 +208,14 @@ If `less` is not showing anything and the whole screen is just `~` then that mea
 For example, the command `tshark -z help` displays the help command for `-z` but the help info is considered an error message. When you pipe this command to `less` nothing gets displayed. 
 Do `2>&1` to change the console `std` to `out` and not `err`.  
 `tshark -z help 2>&1 | less`
+
+## If else statements in awk
+
+There are multiple ways to write if else. Here are some valid ones (1 is True in awk):  
+```
+awk '{if(1) print "True"; else print "False"}'
+
+awk '{if(1) {print "True"} else {print "False"}}'
+
+awk '{print (1 ? print "True" : "print False")}'
+```

@@ -90,8 +90,8 @@ Print system date and time.
 ## df
 Print file system usage.
 
-`-a` Include hidden and duplicate file systems.
-`-h` Human readable data sizes
+`-a` Include hidden and duplicate file systems.  
+`-h` Human readable data sizes.  
 
 ## diff
 TODO
