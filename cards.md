@@ -1153,16 +1153,23 @@ title: Cards
     </div>
     <div class='card'>
         <div class='card-content s29'>
-            <p>127. Describe this wireshark filter <code>http matches "^(get|post)"</code></p>
+            <p>127. Describe this wireshark filter <code>http,request.method matches "^(get|post)"</code></p>
             <input type='checkbox' id='c127' class='hidden'>
-            <label for='c127' class='answer'>matches indicates a regex expression. The regex itself filters for http payloads that starts with either GET or POST.</label>
+            <label for='c127' class='answer'>matches indicates a regex expression. The regex itself filters for http request methods that starts with either GET or POST.</label>
         </div>
     </div>
     <div class='card'>
         <div class='card-content s31'>
-            <p>128. </p>
+            <p>128. Describe this wireshark filter <code>http.request.method matches "[^(get)]"</code></p>
             <input type='checkbox' id='c128' class='hidden'>
-            <label for='c128' class='answer'></label>
+            <label for='c128' class='answer'>matches indicates a regex expression. This regex filters for http request methods that are NOT get requests.</label>
+        </div>
+    </div>
+    <div class='card'>
+        <div class='card-content s33'>
+            <p>129. </p>
+            <input type='checkbox' id='c129' class='hidden'>
+            <label for='c129' class='answer'></label>
         </div>
     </div>
   </div>
